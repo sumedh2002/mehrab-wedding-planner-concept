@@ -1,0 +1,774 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mehrab Weddings &amp; Events — Wedding Planners in Jaipur</title>
+<meta name="description" content="Mehrab plans and designs weddings across Rajasthan, from the roka to the vidaai. Full planning, partial planning and wedding-week management.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<!--
+  Template: to set this up for a planner, find and replace
+    "Mehrab" / "MEHRAB" → their studio name
+    "Jaipur"            → their city
+    "910000000000"      → their WhatsApp number (country code + number, digits only)
+    "+91 00000 00000"   → their phone number as shown
+    "hello@mehrab.example", "@mehrab.weddings" → their email and Instagram
+  then swap the photos in img/ and the couples in "Real weddings".
+-->
+<style>
+  :root {
+    --ivory: #f7f1e8;
+    --ivory-2: #efe6d8;
+    --white: #fffdf9;
+    --ink: #231b18;
+    --text: #5a4d45;
+    --maroon: #5b1626;
+    --maroon-2: #43101c;
+    --gold: #b08d57;
+    --gold-dark: #7a5c30;
+    --gold-light: #d9bf8c;
+    --marigold: #e8891c;
+    --line: rgba(35, 27, 24, .14);
+    --serif: "Bodoni Moda", Didot, Georgia, serif;
+    --sans: "Manrope", system-ui, sans-serif;
+    --gutter: clamp(18px, 5vw, 72px);
+    --nav-h: 84px;
+    --ease: cubic-bezier(.22, 1, .36, 1);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  * { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; overflow-x: clip; }
+  body { background: var(--ivory); color: var(--text); font: 400 16px/1.7 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: clip; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--ink); line-height: 1.08; letter-spacing: -.01em; }
+  em { font-style: italic; color: var(--maroon); }
+  :focus-visible { outline: 2px solid var(--maroon); outline-offset: 3px; }
+  .wrap { max-width: 1280px; margin-inline: auto; padding-inline: var(--gutter); }
+  .label { display: inline-flex; align-items: center; gap: 12px; font: 600 12px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 20px; }
+  .label::before { content: ""; width: 26px; height: 1px; background: var(--gold); }
+  .h2 { font-size: clamp(34px, 4.4vw, 60px); }
+  section { padding-block: clamp(80px, 10vw, 140px); }
+  .head { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: clamp(44px, 6vw, 72px); }
+  .head p { max-width: 400px; }
+
+  .arch { clip-path: url(#mehrab); -webkit-clip-path: url(#mehrab); }
+  .btn { display: inline-flex; align-items: center; gap: 12px; padding: 16px 30px; border-radius: 999px; background: var(--maroon); color: var(--ivory); font: 600 13px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; transition: background .3s, gap .3s var(--ease); }
+  .btn:hover { background: var(--maroon-2); gap: 18px; }
+  .btn.light { background: var(--ivory); color: var(--maroon); }
+  .btn.light:hover { background: var(--white); }
+  .more { display: inline-flex; align-items: center; gap: 10px; font: 600 13px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--ink); padding-bottom: 6px; border-bottom: 1px solid var(--gold); transition: gap .3s var(--ease); }
+  .more:hover { gap: 16px; }
+
+  .reveal { opacity: 0; translate: 0 26px; transition: opacity .9s var(--ease), translate .9s var(--ease); transition-delay: var(--d, 0ms); }
+  .reveal.in { opacity: 1; translate: 0 0; }
+
+  /* Nav */
+  .nav { position: sticky; top: 0; z-index: 30; background: rgba(247, 241, 232, .92); backdrop-filter: blur(10px); border-bottom: 1px solid transparent; transition: border-color .3s; }
+  .nav.scrolled { border-color: var(--line); }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: var(--nav-h); }
+  .logo { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); }
+  .logo svg { width: 26px; height: 32px; color: var(--maroon); }
+  .logo b { display: block; font: 500 21px/1 var(--serif); letter-spacing: .26em; }
+  .logo small { display: block; margin-top: 5px; font: 600 9.5px/1 var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--gold-dark); }
+  .nav ul { display: flex; gap: 34px; list-style: none; font-weight: 500; font-size: 15px; }
+  .nav ul a { position: relative; }
+  .nav ul a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 1px; background: var(--gold); transform: scaleX(0); transition: transform .35s var(--ease); }
+  .nav ul a:hover::after { transform: scaleX(1); }
+  .nav .btn { padding: 13px 22px; }
+  .menu-btn { display: none; padding: 10px 0 10px 14px; font: 600 13px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--ink); }
+  .nav-cta-item { display: none; }
+
+  /* Hero */
+  .hero { padding-block: clamp(24px, 4vw, 48px) clamp(72px, 9vw, 120px); }
+  .hero .wrap { display: grid; grid-template-columns: 1.08fr .92fr; gap: clamp(40px, 6vw, 96px); align-items: center; }
+  .hero h1 { font-size: clamp(44px, 5.6vw, 84px); line-height: 1.04; }
+  .lede { font-size: clamp(17px, 1.5vw, 19px); max-width: 480px; margin: 28px 0 38px; }
+  .hero .ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 22px 30px; }
+  .stats { display: flex; gap: clamp(22px, 4vw, 48px); margin-top: 56px; padding-top: 30px; border-top: 1px solid var(--line); }
+  .stats b { display: block; font: 400 clamp(32px, 3.2vw, 44px)/1 var(--serif); color: var(--maroon); }
+  .stats span { display: block; margin-top: 8px; font-size: 13px; letter-spacing: .04em; }
+
+  .frame { position: relative; width: min(100%, 480px); margin-inline: auto 0; aspect-ratio: 3 / 4; }
+  .outline { position: absolute; width: 100%; height: 100%; overflow: visible; pointer-events: none; color: var(--gold); }
+  .frame .outline { top: -18px; left: 18px; }
+  .slides { position: absolute; inset: 0; background: var(--ivory-2); }
+  .slides img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; scale: 1.08; transition: opacity 1.4s var(--ease), scale 7s linear; }
+  .slides img.on { opacity: 1; scale: 1; }
+  .toran { position: absolute; left: -7%; width: 114%; top: 31%; height: auto; overflow: visible; pointer-events: none; filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .18)); }
+  .booking { position: absolute; left: -40px; bottom: 44px; display: flex; align-items: center; gap: 14px; padding: 16px 20px; background: var(--white); box-shadow: 0 24px 50px -24px rgba(35, 27, 24, .45); }
+  .booking i { width: 9px; height: 9px; border-radius: 50%; background: #2f9e5a; box-shadow: 0 0 0 4px rgba(47, 158, 90, .16); }
+  .booking small { display: block; font: 600 10.5px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--gold-dark); }
+  .booking b { display: block; margin-top: 6px; font: 400 19px/1 var(--serif); color: var(--ink); }
+  .caption { display: flex; justify-content: space-between; gap: 16px; margin-top: 26px; font-size: 13px; letter-spacing: .04em; }
+  .caption span:first-child { font: italic 400 17px/1.3 var(--serif); color: var(--ink); transition: opacity .5s; }
+  .caption .count { font-variant-numeric: tabular-nums; color: var(--gold-dark); white-space: nowrap; }
+
+  /* Intro statement */
+  .intro { text-align: center; padding-top: 0; }
+  .ornament { width: 34px; height: 42px; margin: 0 auto 28px; color: var(--gold); }
+  .intro p.statement { max-width: 940px; margin-inline: auto; font: 400 clamp(26px, 3.3vw, 44px)/1.3 var(--serif); color: var(--ink); }
+  .intro .sign { margin-top: 28px; font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-dark); }
+
+  /* Rituals */
+  .rituals { background: var(--white); }
+  .rituals-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+  [role=tablist] { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+  [role=tab] { display: grid; grid-template-columns: 44px 1fr auto; align-items: baseline; gap: 12px; padding: 18px 4px; border-bottom: 1px solid var(--line); text-align: left; transition: padding .4s var(--ease), color .3s; }
+  [role=tab] .num { font: italic 400 17px/1 var(--serif); color: var(--gold); }
+  [role=tab] .name { font: 400 clamp(24px, 2.4vw, 32px)/1.1 var(--serif); color: var(--ink); transition: color .3s; }
+  [role=tab] .what { font-size: 13px; color: var(--text); opacity: 0; translate: -8px 0; transition: opacity .3s, translate .4s var(--ease); }
+  [role=tab]:hover { padding-left: 12px; }
+  [role=tab][aria-selected=true] { padding-left: 12px; }
+  [role=tab][aria-selected=true] .name { color: var(--maroon); font-style: italic; }
+  [role=tab][aria-selected=true] .what, [role=tab]:hover .what { opacity: 1; translate: 0 0; }
+  .panels { display: grid; }
+  [role=tabpanel] { grid-area: 1 / 1; display: grid; grid-template-columns: .9fr 1fr; gap: clamp(24px, 3vw, 44px); align-items: center; }
+  [role=tabpanel][hidden] { display: none; }
+  [role=tabpanel]:not([hidden]) { animation: fade .7s var(--ease); }
+  @keyframes fade { from { opacity: 0; translate: 0 12px; } }
+  .panel-img { position: relative; aspect-ratio: 3 / 4; }
+  .panel-img img { width: 100%; height: 100%; object-fit: cover; }
+  .panel-img .outline { top: -12px; left: 12px; }
+  [role=tabpanel] h3 { font-size: clamp(30px, 3vw, 42px); margin-bottom: 14px; }
+  [role=tabpanel] h3 + p { margin-bottom: 24px; }
+  .handle-label { font: 600 11px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 12px; }
+  .handle { list-style: none; display: grid; gap: 10px; }
+  .handle li { display: flex; gap: 12px; align-items: baseline; color: var(--ink); }
+  .handle li::before { content: ""; flex: none; width: 7px; height: 7px; rotate: 45deg; background: var(--gold); translate: 0 -2px; }
+
+  /* Services (arch-topped cards) */
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
+  .service { position: relative; display: flex; flex-direction: column; padding: 76px clamp(24px, 2.6vw, 38px) 38px; background: var(--white); border: 1px solid var(--line); border-radius: 220px 220px 4px 4px / 150px 150px 4px 4px; transition: translate .5s var(--ease), box-shadow .5s var(--ease); }
+  .service:hover { translate: 0 -6px; box-shadow: 0 30px 60px -36px rgba(35, 27, 24, .4); }
+  .service .when { font: 600 11px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-dark); text-align: center; }
+  .service h3 { font-size: clamp(28px, 2.6vw, 36px); text-align: center; margin: 14px 0 16px; }
+  .service > p { text-align: center; margin-bottom: 26px; }
+  .service ul { list-style: none; border-top: 1px solid var(--line); margin-bottom: 30px; flex: 1; }
+  .service li { padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--ink); font-size: 15px; }
+  .service .more { align-self: center; }
+  .service.featured { background: var(--maroon); border-color: var(--maroon); color: rgba(247, 241, 232, .82); }
+  .service.featured h3, .service.featured li { color: var(--ivory); }
+  .service.featured .when { color: var(--gold-light); }
+  .service.featured ul, .service.featured li { border-color: rgba(247, 241, 232, .18); }
+  .service.featured .more { color: var(--ivory); border-color: var(--gold-light); }
+  .tag { position: absolute; top: 26px; left: 50%; translate: -50% 0; padding: 6px 12px; border: 1px solid var(--gold-light); border-radius: 999px; font: 600 10px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--gold-light); white-space: nowrap; }
+
+  /* Real weddings carousel */
+  .weddings { background: var(--ivory-2); overflow-x: clip; }
+  .controls { display: flex; gap: 10px; }
+  .controls button { display: grid; place-items: center; width: 52px; height: 52px; border: 1px solid var(--ink); border-radius: 50%; transition: background .3s, color .3s, opacity .3s; }
+  .controls button:hover:not(:disabled) { background: var(--ink); color: var(--ivory); }
+  .controls button:disabled { opacity: .3; cursor: default; }
+  .controls svg { width: 18px; height: 18px; }
+  .track { display: flex; gap: clamp(20px, 2.4vw, 32px); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 8px; margin-right: calc(var(--gutter) * -1); padding-right: var(--gutter); }
+  .track::-webkit-scrollbar { display: none; }
+  .story { flex: 0 0 clamp(260px, 26vw, 340px); scroll-snap-align: start; }
+  .story .pic { position: relative; aspect-ratio: 4 / 5; overflow: hidden; }
+  .story img { width: 100%; height: 100%; object-fit: cover; transition: scale 1.2s var(--ease); }
+  .story:hover img { scale: 1.05; }
+  .story .where { margin-top: 22px; font: 600 11px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-dark); }
+  .story h3 { font-size: 30px; margin: 10px 0 6px; }
+  .story .meta { font-size: 14px; }
+  .story.next .pic { display: grid; place-items: center; background: var(--maroon); text-align: center; padding: 40px 28px 0; }
+  .story.next .pic p { font: italic 400 30px/1.2 var(--serif); color: var(--ivory); }
+  .story.next .pic span { display: block; margin-top: 22px; font: 600 12px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--gold-light); }
+  .progress { height: 1px; background: var(--line); margin-top: 40px; }
+  .progress i { display: block; height: 100%; width: 30%; background: var(--maroon); transform-origin: left; transition: width .3s var(--ease); }
+  /* Wide screens: the section pins and vertical scrolling drives the cards sideways (section height is set in JS). */
+  .weddings.scrolly { padding-block: 0; }
+  .scrolly .pin { position: sticky; top: var(--nav-h); height: calc(100vh - var(--nav-h)); display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
+  .scrolly .head { margin-bottom: clamp(14px, 3vh, 36px); }
+  .scrolly .label { margin-bottom: 10px; }
+  .scrolly .h2 { font-size: clamp(30px, 3.4vw, 50px); }
+  .scrolly .story .where { margin-top: 14px; }
+  .scrolly .story h3 { font-size: 25px; margin: 6px 0 2px; }
+  .scrolly .track { overflow: visible; scroll-snap-type: none; margin-right: 0; padding-right: 0; will-change: transform; }
+  .scrolly .story { flex-basis: var(--card-w, 300px); }
+  .scrolly .progress { margin-top: clamp(14px, 3vh, 32px); }
+  .scrolly .progress i { transition: none; }
+
+  /* Process */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; list-style: none; position: relative; counter-reset: s; }
+  .steps::before { content: ""; position: absolute; top: 31px; left: 32px; right: 12%; border-top: 1px dashed var(--gold); }
+  .steps li { position: relative; counter-increment: s; }
+  .steps li::before { content: counter(s, upper-roman); display: grid; place-items: center; width: 64px; height: 64px; margin-bottom: 26px; background: var(--ivory); border: 1px solid var(--gold); border-radius: 32px 32px 4px 4px; font: italic 400 22px/1 var(--serif); color: var(--maroon); }
+  .steps h3 { font-size: 26px; margin-bottom: 10px; }
+
+  /* Testimonials */
+  .words { background: var(--maroon); color: rgba(247, 241, 232, .85); text-align: center; }
+  .words .label { color: var(--gold-light); }
+  .words .label::before { background: var(--gold-light); }
+  .quotes { display: grid; max-width: 960px; margin-inline: auto; }
+  .quote { grid-area: 1 / 1; }
+  .quote[hidden] { display: none; }
+  .quote:not([hidden]) { animation: fade .8s var(--ease); }
+  .quote p { font: italic 400 clamp(24px, 3vw, 40px)/1.35 var(--serif); color: var(--ivory); }
+  .quote cite { display: block; margin-top: 30px; font-style: normal; font-size: 14px; letter-spacing: .06em; }
+  .quote cite b { display: block; font: 400 22px/1.2 var(--serif); color: var(--gold-light); letter-spacing: 0; margin-bottom: 4px; }
+  .stars { color: var(--gold-light); letter-spacing: 6px; margin-bottom: 26px; }
+  .q-nav { display: flex; justify-content: center; align-items: center; gap: 22px; margin-top: 44px; }
+  .q-nav button.arrow { display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid rgba(247, 241, 232, .4); border-radius: 50%; color: var(--ivory); transition: background .3s, color .3s; }
+  .q-nav button.arrow:hover { background: var(--ivory); color: var(--maroon); }
+  .q-nav svg { width: 16px; height: 16px; }
+  .dots { display: flex; gap: 10px; }
+  .dots button { width: 9px; height: 9px; border-radius: 50%; border: 1px solid var(--gold-light); transition: background .3s, width .3s var(--ease); }
+  .dots button[aria-current=true] { background: var(--gold-light); width: 26px; border-radius: 6px; }
+  .rating { margin-top: 30px; font-size: 13px; letter-spacing: .08em; color: rgba(247, 241, 232, .7); }
+
+  /* Enquiry */
+  .enquire { background: var(--ivory-2); }
+  .enquire .wrap { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(36px, 6vw, 96px); align-items: start; }
+  .contact-list { list-style: none; display: grid; gap: 18px; margin-top: 36px; }
+  .contact-list li { display: flex; gap: 16px; align-items: flex-start; color: var(--ink); }
+  .contact-list svg { flex: none; width: 22px; height: 22px; color: var(--maroon); fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; margin-top: 2px; }
+  .contact-list small { display: block; font-size: 13px; color: var(--text); }
+  .contact-list a:hover { color: var(--maroon); }
+  .form { background: var(--white); padding: clamp(28px, 4vw, 52px); border-radius: 220px 220px 4px 4px / 110px 110px 4px 4px; padding-top: clamp(70px, 8vw, 96px); box-shadow: 0 40px 80px -50px rgba(35, 27, 24, .45); }
+  .form h3 { font-size: clamp(28px, 2.6vw, 34px); text-align: center; margin-bottom: 8px; }
+  .form > p { text-align: center; margin-bottom: 30px; }
+  .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 22px; }
+  .fields label, .fields legend { display: grid; gap: 8px; font: 600 11px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--ink); }
+  .full { grid-column: 1 / -1; }
+  input, select, textarea { width: 100%; font: 400 16px/1.4 var(--sans); color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid rgba(35, 27, 24, .3); padding: 10px 0; border-radius: 0; letter-spacing: 0; text-transform: none; }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--maroon); }
+  textarea { resize: vertical; min-height: 80px; }
+  fieldset { border: 0; }
+  fieldset legend { margin-bottom: 12px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .chip span { display: inline-block; padding: 9px 16px; border: 1px solid rgba(35, 27, 24, .25); border-radius: 999px; font: 500 14px/1 var(--sans); letter-spacing: 0; text-transform: none; color: var(--text); cursor: pointer; transition: all .25s; }
+  .chip input:checked + span { background: var(--maroon); border-color: var(--maroon); color: var(--ivory); }
+  .chip input:focus-visible + span { outline: 2px solid var(--maroon); outline-offset: 2px; }
+  .form .btn { width: 100%; justify-content: center; margin-top: 30px; }
+  .form .note { margin-top: 14px; text-align: center; font-size: 13px; }
+
+  /* Footer */
+  footer { background: var(--maroon-2); color: rgba(247, 241, 232, .74); padding-top: 72px; }
+  footer .wrap { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 36px; }
+  footer .logo { color: var(--ivory); }
+  footer .logo svg { color: var(--gold-light); }
+  footer .logo small { color: var(--gold-light); }
+  footer .about { margin-top: 18px; max-width: 320px; }
+  footer h4 { font: 600 11px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 16px; }
+  footer li { list-style: none; margin-bottom: 9px; }
+  footer a:hover { color: var(--ivory); }
+  .legal { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-top: 30px; padding: 24px 0 28px; border-top: 1px solid rgba(247, 241, 232, .14); font-size: 13px; }
+  .legal a { color: var(--ivory); text-decoration: underline; text-underline-offset: 3px; }
+
+  .wa { position: fixed; right: 22px; bottom: 22px; z-index: 40; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: #1f8f4e; color: #fff; box-shadow: 0 12px 28px -8px rgba(0, 0, 0, .35); transition: translate .3s var(--ease); }
+  .wa:hover { translate: 0 -3px; }
+  .wa svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+  @media (max-width: 1000px) {
+    .nav ul, .nav .btn { display: none; }
+    .menu-btn { display: block; }
+    .nav.open ul { display: flex; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; padding: 0 var(--gutter) 18px; background: var(--ivory); border-bottom: 1px solid var(--line); }
+    .nav.open ul a { display: block; padding: 15px 0; border-top: 1px solid var(--line); }
+    .nav.open ul a::after { display: none; }
+    .nav.open .nav-cta-item { display: block; }
+    .nav-cta-item a { color: var(--maroon); font-weight: 600; }
+    .hero .wrap, .rituals-grid, .enquire .wrap { grid-template-columns: 1fr; }
+    .frame { margin: 24px auto 0; width: min(88%, 440px); }
+    .booking { left: -18px; }
+    .services-grid { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; }
+    .steps { grid-template-columns: 1fr 1fr; gap: 44px 28px; }
+    .steps::before { display: none; }
+    footer .wrap { grid-template-columns: 1fr 1fr; }
+    .head { flex-direction: column; align-items: start; }
+  }
+  @media (max-width: 640px) {
+    :root { --nav-h: 70px; }
+    .logo b { font-size: 18px; }
+    .stats { justify-content: space-between; }
+    .stats span { font-size: 12px; }
+    .booking { left: -10px; bottom: 26px; padding: 12px 14px; }
+    .booking b { font-size: 16px; }
+    [role=tablist] { flex-direction: row; overflow-x: auto; scrollbar-width: none; border: 0; gap: 8px; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); }
+    [role=tablist]::-webkit-scrollbar { display: none; }
+    [role=tab] { display: block; flex: none; padding: 10px 18px; border: 1px solid var(--line); border-radius: 999px; }
+    [role=tab]:hover, [role=tab][aria-selected=true] { padding-left: 18px; }
+    [role=tab] .num, [role=tab] .what { display: none; }
+    [role=tab] .name { font-size: 19px; }
+    [role=tab][aria-selected=true] { background: var(--maroon); border-color: var(--maroon); }
+    [role=tab][aria-selected=true] .name { color: var(--ivory); }
+    [role=tabpanel] { grid-template-columns: 1fr; }
+    .panel-img { width: min(78%, 320px); margin-inline: auto; }
+    .steps { grid-template-columns: 1fr; }
+    .fields { grid-template-columns: 1fr; }
+    .form { border-radius: 160px 160px 4px 4px / 80px 80px 4px 4px; }
+    footer .wrap > div:first-child { grid-column: 1 / -1; }
+    .legal { flex-direction: column; padding-bottom: 90px; }
+    .wa { right: 14px; bottom: 14px; width: 52px; height: 52px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; translate: none; transition: none; }
+    .slides img { transition: opacity .3s; scale: 1; }
+  }
+</style>
+</head>
+<body>
+
+<!-- The mehrab (pointed arch) used to frame photos; objectBoundingBox makes it scale to any box. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <clipPath id="mehrab" clipPathUnits="objectBoundingBox"><path d="M0,1V.36C0,.2 .2,.08 .5,0C.8,.08 1,.2 1,.36V1Z"/></clipPath>
+    <symbol id="arch-line" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,100V36C0,20 20,8 50,0C80,8 100,20 100,36V100" fill="none" stroke="currentColor" stroke-width="1.2" vector-effect="non-scaling-stroke"/></symbol>
+  </defs>
+</svg>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Mehrab Weddings &amp; Events, home">
+      <svg viewBox="0 0 26 32" fill="none" aria-hidden="true"><path d="M2 31V13.5C2 7.5 6.5 3.5 13 1.5c6.5 2 11 6 11 12V31" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 31V15.5c0-3.2 2.2-5.8 5.5-7 3.3 1.2 5.5 3.8 5.5 7V31" stroke="currentColor" stroke-width="1.6"/></svg>
+      <span><b>MEHRAB</b><small>Weddings &amp; Events</small></span>
+    </a>
+    <ul id="nav-links">
+      <li><a href="#rituals">Rituals</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#weddings">Weddings</a></li>
+      <li><a href="#words">Kind words</a></li>
+      <li class="nav-cta-item"><a href="#enquire">Plan your wedding →</a></li>
+    </ul>
+    <a href="#enquire" class="btn">Plan your wedding</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="label reveal">Wedding planners · Jaipur, Rajasthan</p>
+      <h1 class="reveal" style="--d:80ms">Roka to vidaai,<br><em>beautifully held.</em></h1>
+      <p class="lede reveal" style="--d:160ms">We plan and design weddings across Rajasthan with one promise: your family gets to be guests at their own celebration.</p>
+      <div class="ctas reveal" style="--d:240ms">
+        <a href="#enquire" class="btn">Plan your wedding <span aria-hidden="true">→</span></a>
+        <a href="#weddings" class="more">See our weddings <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="stats reveal" style="--d:320ms">
+        <div><b data-count="250" data-suffix="+">250+</b><span>Weddings planned</span></div>
+        <div><b data-count="9">9</b><span>Years in Rajasthan</span></div>
+        <div><b data-count="4.9" data-decimals="1">4.9</b><span>Rating on Google</span></div>
+      </div>
+    </div>
+
+    <div class="reveal" style="--d:200ms">
+      <div class="frame">
+        <svg class="outline" aria-hidden="true"><use href="#arch-line"/></svg>
+        <div class="slides arch">
+          <img class="on" src="img/hero-mandap.jpg" alt="Hanging yellow floral strands over a mandap at dusk" data-caption="Pheras under a thousand strands, Udaipur" width="900" height="1200">
+          <img src="img/hero-arches.jpg" alt="Carved cream archways lit with crystal chandeliers" data-caption="A sangeet in carved arches, Jaipur" width="900" height="1200" loading="lazy">
+          <img src="img/hero-garlands.jpg" alt="Strings of marigold and jasmine garlands" data-caption="Marigold and jasmine for the haldi, Jodhpur" width="900" height="1200" loading="lazy">
+        </div>
+        <svg class="toran" id="toran" viewBox="0 0 400 70" aria-hidden="true"></svg>
+        <div class="booking"><i aria-hidden="true"></i><div><small>Now booking</small><b>Winter 2026 – 27</b></div></div>
+      </div>
+      <p class="caption" aria-live="polite"><span id="slide-caption">Pheras under a thousand strands, Udaipur</span><span class="count" id="slide-count">01 / 03</span></p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="intro">
+    <div class="wrap">
+      <svg class="ornament" viewBox="0 0 34 42" fill="none" aria-hidden="true"><path d="M2 41V18C2 10 8 5 17 2c9 3 15 8 15 16v23" stroke="currentColor" stroke-width="1.3"/><path d="M17 14l3 4-3 4-3-4z" fill="currentColor"/></svg>
+      <p class="statement reveal">We don't just plan weddings. We <em>hold</em> them: every ritual, every relative, every last marigold, so the only thing you have to do is be there.</p>
+      <p class="sign reveal">The Mehrab team</p>
+    </div>
+  </section>
+
+  <section class="rituals" id="rituals">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="label">The rituals</p><h2 class="h2">Every function, <em>considered.</em></h2></div>
+        <p>An Indian wedding is six celebrations, not one. Choose a ritual to see what we take off your family's hands.</p>
+      </div>
+      <div class="rituals-grid">
+        <div role="tablist" aria-label="Wedding rituals">
+          <button role="tab" id="t-roka" aria-controls="p-roka" aria-selected="true"><span class="num">i.</span><span class="name">Roka</span><span class="what">The first yes</span></button>
+          <button role="tab" id="t-mehendi" aria-controls="p-mehendi" aria-selected="false" tabindex="-1"><span class="num">ii.</span><span class="name">Mehendi</span><span class="what">Henna &amp; music</span></button>
+          <button role="tab" id="t-haldi" aria-controls="p-haldi" aria-selected="false" tabindex="-1"><span class="num">iii.</span><span class="name">Haldi</span><span class="what">Marigolds &amp; turmeric</span></button>
+          <button role="tab" id="t-sangeet" aria-controls="p-sangeet" aria-selected="false" tabindex="-1"><span class="num">iv.</span><span class="name">Sangeet</span><span class="what">The big night in</span></button>
+          <button role="tab" id="t-pheras" aria-controls="p-pheras" aria-selected="false" tabindex="-1"><span class="num">v.</span><span class="name">Pheras</span><span class="what">The seven vows</span></button>
+          <button role="tab" id="t-reception" aria-controls="p-reception" aria-selected="false" tabindex="-1"><span class="num">vi.</span><span class="name">Reception</span><span class="what">Your first evening</span></button>
+        </div>
+        <div class="panels">
+          <div role="tabpanel" id="p-roka" aria-labelledby="t-roka">
+            <div class="panel-img"><svg class="outline" aria-hidden="true"><use href="#arch-line"/></svg><img class="arch" src="img/r-roka.jpg" alt="Wedding rings resting on white and pink roses" width="720" height="960"></div>
+            <div><h3>Roka</h3><p>An intimate family gathering to bless the match. We keep it warm, simple and easy to put together at short notice.</p>
+              <p class="handle-label">What we handle</p>
+              <ul class="handle"><li>Home or venue setup</li><li>Florals and puja arrangements</li><li>Catering and a photographer</li><li>Gifting and shagun trays</li></ul></div>
+          </div>
+          <div role="tabpanel" id="p-mehendi" aria-labelledby="t-mehendi" hidden>
+            <div class="panel-img"><svg class="outline" aria-hidden="true"><use href="#arch-line"/></svg><img class="arch" src="img/r-mehendi.jpg" alt="Red, peach and marigold floral décor" width="720" height="960" loading="lazy"></div>
+            <div><h3>Mehendi</h3><p>A long, happy afternoon of henna, folk music and swings, planned so nobody waits two hours for their turn.</p>
+              <p class="handle-label">What we handle</p>
+              <ul class="handle"><li>Mehendi artists sized to your guest list</li><li>Floral swings, seating and shade</li><li>Dhol, folk singers and games</li><li>Live chaat and chai counters</li></ul></div>
+          </div>
+          <div role="tabpanel" id="p-haldi" aria-labelledby="t-haldi" hidden>
+            <div class="panel-img"><svg class="outline" aria-hidden="true"><use href="#arch-line"/></svg><img class="arch" src="img/r-haldi.jpg" alt="Heaps of yellow marigolds and red rose petals" width="720" height="960" loading="lazy"></div>
+            <div><h3>Haldi</h3><p>The messiest, most joyful morning of the week. We make the mess beautiful, and make sure it stays where it should.</p>
+              <p class="handle-label">What we handle</p>
+              <ul class="handle"><li>Marigold décor and petal showers</li><li>Splash-proof seating and covers</li><li>Fresh haldi and ubtan</li><li>Breakfast and drinks stations</li></ul></div>
+          </div>
+          <div role="tabpanel" id="p-sangeet" aria-labelledby="t-sangeet" hidden>
+            <div class="panel-img"><svg class="outline" aria-hidden="true"><use href="#arch-line"/></svg><img class="arch" src="img/r-sangeet.jpg" alt="Stage with red and white florals, drapes and a carved sofa" width="720" height="960" loading="lazy"></div>
+            <div><h3>Sangeet</h3><p>Family performances, a proper stage and a dance floor that stays full long after the last rehearsed number.</p>
+              <p class="handle-label">What we handle</p>
+              <ul class="handle"><li>Stage, sound and lighting</li><li>A choreographer for family acts</li><li>Show running order and an anchor</li><li>DJ and the after-party</li></ul></div>
+          </div>
+          <div role="tabpanel" id="p-pheras" aria-labelledby="t-pheras" hidden>
+            <div class="panel-img"><svg class="outline" aria-hidden="true"><use href="#arch-line"/></svg><img class="arch" src="img/r-pheras.jpg" alt="Floral dome mandap with rows of clear chairs" width="720" height="960" loading="lazy"></div>
+            <div><h3>Pheras</h3><p>The heart of the wedding, timed to the muhurat to the minute, with every elder seated where they can see.</p>
+              <p class="handle-label">What we handle</p>
+              <ul class="handle"><li>Mandap design and build</li><li>Pandit ji and puja samagri</li><li>Baraat and varmala moments</li><li>A muhurat-perfect run of show</li></ul></div>
+          </div>
+          <div role="tabpanel" id="p-reception" aria-labelledby="t-reception" hidden>
+            <div class="panel-img"><svg class="outline" aria-hidden="true"><use href="#arch-line"/></svg><img class="arch" src="img/r-reception.jpg" alt="Ballroom with grand chandeliers and dressed tables" width="720" height="960" loading="lazy"></div>
+            <div><h3>Reception</h3><p>A polished evening for your wider circle: your first night as a couple, and the one everyone photographs.</p>
+              <p class="handle-label">What we handle</p>
+              <ul class="handle"><li>Stage and photo moments</li><li>Menu tastings and the bar</li><li>Seating plans and guest flow</li><li>The send-off</li></ul></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="label">How we help</p><h2 class="h2">Choose how much <em>you'd like us to carry.</em></h2></div>
+        <p>Every wedding has one lead planner from the first call to the last guest home, whichever way you work with us.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service reveal">
+          <p class="when">From 12 months out</p>
+          <h3>Full planning</h3>
+          <p>Every function, from first idea to the final vidaai: venue, design, vendors, guests and the whole weekend.</p>
+          <ul><li>Venue search and booking</li><li>Complete décor design</li><li>Every vendor, booked and managed</li><li>Guest travel and hospitality</li><li>Our team on every day</li></ul>
+          <a href="#enquire" class="more">Enquire <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="service featured reveal" style="--d:100ms">
+          <span class="tag">Most chosen</span>
+          <p class="when">From 6 months out</p>
+          <h3>Partial planning</h3>
+          <p>You've made a start, and we finish it: the bookings, design and logistics you haven't got to yet.</p>
+          <ul><li>Plan and budget review</li><li>Décor design and production</li><li>Vendor bookings and briefs</li><li>Guest hospitality desk</li><li>Our team on the main days</li></ul>
+          <a href="#enquire" class="more">Enquire <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="service reveal" style="--d:200ms">
+          <p class="when">The final 6 weeks</p>
+          <h3>Wedding-week management</h3>
+          <p>You've planned it all. We step in to confirm every detail and run the week, so you can enjoy it.</p>
+          <ul><li>Vendor confirmations</li><li>Run of show for each function</li><li>Guest arrival desk</li><li>On-site coordinators</li></ul>
+          <a href="#enquire" class="more">Enquire <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="weddings" id="weddings">
+    <div class="pin">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="label">Real weddings</p><h2 class="h2">Weddings we've <em>held.</em></h2></div>
+        <div class="controls">
+          <button type="button" id="prev" aria-label="Previous weddings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button type="button" id="next" aria-label="Next weddings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <div class="track" id="track">
+        <a href="#" class="story"><div class="pic arch"><img src="img/w-gazebo.jpg" alt="Garden gazebo with florals and dressed chairs" loading="lazy" width="720" height="900"></div><p class="where">Udaipur · Lakeside garden</p><h3>Ishita &amp; Raghav</h3><p class="meta">3 days · 280 guests · 5 functions</p></a>
+        <a href="#" class="story"><div class="pic arch"><img src="img/w-goa-beach.jpg" alt="Draped ceremony arch with palm fronds and pink blooms on the sand" loading="lazy" width="720" height="900"></div><p class="where">Goa · Beachfront pheras</p><h3>Aisha &amp; Karan</h3><p class="meta">3 days · 160 guests · 5 functions</p></a>
+        <a href="#" class="story"><div class="pic arch"><img src="img/w-pushkar.jpg" alt="Long dinner table with blush florals under chandeliers" loading="lazy" width="720" height="900"></div><p class="where">Pushkar · Desert retreat</p><h3>Tara &amp; Vikram</h3><p class="meta">2 days · 120 guests · 4 functions</p></a>
+        <a href="#" class="story"><div class="pic arch"><img src="img/w-alibaug.jpg" alt="Rows of white chairs on a seaside lawn facing the water" loading="lazy" width="720" height="900"></div><p class="where">Alibaug · Seaside lawn</p><h3>Naina &amp; Rohan</h3><p class="meta">2 days · 220 guests · 4 functions</p></a>
+        <a href="#" class="story"><div class="pic arch"><img src="img/w-goa.jpg" alt="Garden table with blue napkins and yellow flowers" loading="lazy" width="720" height="900"></div><p class="where">Coorg · Coffee estate</p><h3>Meher &amp; Aditya</h3><p class="meta">2 days · 90 guests · 3 functions</p></a>
+        <a href="#" class="story"><div class="pic arch"><img src="img/w-jaipur.jpg" alt="Bridal bouquet of blush roses and succulents" loading="lazy" width="720" height="900"></div><p class="where">Jaipur · Heritage haveli</p><h3>Zoya &amp; Kabir</h3><p class="meta">3 days · 350 guests · 6 functions</p></a>
+        <a href="#enquire" class="story next"><div class="pic arch"><div><p>Your wedding could be next.</p><span>Start planning →</span></div></div><p class="where">Booking winter 2026 – 27</p><h3>Your story</h3><p class="meta">Tell us your dates</p></a>
+      </div>
+      <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+    </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="label">How it works</p><h2 class="h2">Four steps to <em>"qubool hai."</em></h2></div>
+        <p>Start a year out or three months out. Either way, you'll always know what's decided, what's next and who's handling it.</p>
+      </div>
+      <ol class="steps">
+        <li class="reveal"><h3>Consultation</h3><p>A relaxed first meeting about your dates, guests, budget and the feeling you want.</p></li>
+        <li class="reveal" style="--d:80ms"><h3>Proposal</h3><p>A clear plan with a line-by-line quotation. No hidden costs, ever.</p></li>
+        <li class="reveal" style="--d:160ms"><h3>Design &amp; bookings</h3><p>Décor finalised, vendors booked, and updates in one WhatsApp group.</p></li>
+        <li class="reveal" style="--d:240ms"><h3>The celebration</h3><p>Our team runs every function. Your family gets to be guests.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="words" id="words">
+    <div class="wrap">
+      <p class="label">Kind words</p>
+      <div class="stars" aria-hidden="true">★★★★★</div>
+      <div class="quotes" aria-live="polite">
+        <blockquote class="quote"><p>“From the haldi to the reception, everything ran on time. Our parents actually got to sit down and enjoy their own children's wedding.”</p><cite><b>Riya &amp; Kabir</b>Jaipur · February 2025</cite></blockquote>
+        <blockquote class="quote" hidden><p>“They found us a haveli we'd never have found ourselves and kept us under budget. Every single update came on WhatsApp, which made it so easy.”</p><cite><b>Ananya &amp; Dev</b>Udaipur · December 2024</cite></blockquote>
+        <blockquote class="quote" hidden><p>“The mandap was exactly what I'd pinned for two years. Two months on, our guests are still talking about the sangeet.”</p><cite><b>Sneha &amp; Arjun</b>Jodhpur · November 2024</cite></blockquote>
+      </div>
+      <div class="q-nav">
+        <button type="button" class="arrow" id="q-prev" aria-label="Previous review"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <div class="dots" id="dots"></div>
+        <button type="button" class="arrow" id="q-next" aria-label="Next review"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+      <p class="rating">4.9 average from 120+ Google reviews</p>
+    </div>
+  </section>
+
+  <section class="enquire" id="enquire">
+    <div class="wrap">
+      <div>
+        <p class="label">Enquire</p>
+        <h2 class="h2">Let's begin with a <em>conversation.</em></h2>
+        <p style="margin-top:22px;max-width:440px">Tell us a little about your wedding. Your details open in WhatsApp ready to send, and we usually reply within a few hours.</p>
+        <ul class="contact-list">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><a href="tel:+910000000000">+91 00000 00000</a><small>Mon – Sat, 10 am – 7 pm</small></div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5z"/></svg><div><a href="https://wa.me/910000000000" target="_blank" rel="noopener">Chat on WhatsApp</a><small>The quickest way to reach us</small></div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6l8.5 7 8.5-7"/></svg><div><a href="mailto:hello@mehrab.example">hello@mehrab.example</a></div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div>C-Scheme, Jaipur<small>Weddings across Rajasthan and beyond</small></div></li>
+        </ul>
+      </div>
+      <form class="form" id="enquiry-form">
+        <h3>Plan your wedding</h3>
+        <p>It takes a minute.</p>
+        <div class="fields">
+          <label>Your names<input name="names" required autocomplete="name" placeholder="Riya &amp; Kabir"></label>
+          <label>Phone<input name="phone" type="tel" required autocomplete="tel" pattern="[0-9+ ]{10,15}" title="10 to 15 digits" placeholder="98290 12345"></label>
+          <label>Wedding date<input name="date" type="date"></label>
+          <label>City or venue<input name="venue" placeholder="Jaipur, or not decided"></label>
+          <label>Guests<select name="guests"><option>Under 100</option><option selected>100 – 300</option><option>300 – 600</option><option>600+</option></select></label>
+          <label>Budget<select name="budget"><option>Under ₹15 lakh</option><option selected>₹15 – 40 lakh</option><option>₹40 lakh – 1 crore</option><option>₹1 crore+</option><option>Not sure yet</option></select></label>
+          <fieldset class="full">
+            <legend>Functions</legend>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="events" value="Roka"><span>Roka</span></label>
+              <label class="chip"><input type="checkbox" name="events" value="Mehendi"><span>Mehendi</span></label>
+              <label class="chip"><input type="checkbox" name="events" value="Haldi"><span>Haldi</span></label>
+              <label class="chip"><input type="checkbox" name="events" value="Sangeet"><span>Sangeet</span></label>
+              <label class="chip"><input type="checkbox" name="events" value="Pheras" checked><span>Pheras</span></label>
+              <label class="chip"><input type="checkbox" name="events" value="Reception"><span>Reception</span></label>
+            </div>
+          </fieldset>
+          <label class="full">Anything else?<textarea name="message" placeholder="Theme, colours, must-haves…"></textarea></label>
+        </div>
+        <button class="btn" type="submit">Send on WhatsApp <span aria-hidden="true">→</span></button>
+        <p class="note">No spam. We only use your number to reply to you.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a href="#top" class="logo"><svg viewBox="0 0 26 32" fill="none" aria-hidden="true"><path d="M2 31V13.5C2 7.5 6.5 3.5 13 1.5c6.5 2 11 6 11 12V31" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 31V15.5c0-3.2 2.2-5.8 5.5-7 3.3 1.2 5.5 3.8 5.5 7V31" stroke="currentColor" stroke-width="1.6"/></svg><span><b>MEHRAB</b><small>Weddings &amp; Events</small></span></a>
+      <p class="about">Wedding planning and design in Jaipur, and wherever in Rajasthan you'd like to say "qubool hai".</p>
+    </div>
+    <div><h4>Explore</h4><ul><li><a href="#rituals">Rituals</a></li><li><a href="#services">Services</a></li><li><a href="#weddings">Real weddings</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="tel:+910000000000">+91 00000 00000</a></li><li><a href="https://wa.me/910000000000" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:hello@mehrab.example">hello@mehrab.example</a></li></ul></div>
+    <div><h4>Follow</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Pinterest</a></li></ul></div>
+    <div class="legal"><span>© 2026 Mehrab Weddings &amp; Events, Jaipur</span><span>Concept by <a href="https://sumedhingle.com" target="_blank" rel="noopener">Sumedh Ingle</a></span></div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/910000000000?text=Hi%20Mehrab%2C%20I%27d%20like%20to%20plan%20my%20wedding." target="_blank" rel="noopener" aria-label="Chat with Mehrab on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5z"/><path d="M9 9.5c.3 2 2 3.8 4.5 4.5"/></svg>
+</a>
+
+<script>
+  const WHATSAPP = '910000000000'; // planner's WhatsApp: country code + number, digits only
+  const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Nav: mobile menu + hairline once scrolled
+  const nav = $('.nav'), menuBtn = $('.menu-btn');
+  function setMenu(open) {
+    nav.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', open);
+    menuBtn.textContent = open ? 'Close' : 'Menu';
+  }
+  menuBtn.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
+  $$('.nav ul a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 10), { passive: true });
+
+  // Marigold toran strung across the hero arch
+  (() => {
+    const svg = $('#toran'), n = 15, parts = ['<path d="M0 6Q200 54 400 6" fill="none" stroke="#7a5c30" stroke-width="1"/>'];
+    for (let i = 0; i < n; i++) {
+      const t = i / (n - 1), x = 400 * t, y = 6 + 96 * t * (1 - t);
+      if (i % 2) parts.push(`<path d="M${x} ${y}V${y + 22}" stroke="#7a5c30" stroke-width=".8"/><circle cx="${x}" cy="${y + 17}" r="4.2" fill="#e8891c"/><circle cx="${x}" cy="${y + 26}" r="3.4" fill="#f2b33d"/>`);
+      else parts.push(`<ellipse cx="${x + 9}" cy="${y + 4}" rx="5" ry="2.4" fill="#5f7a3a" transform="rotate(30 ${x + 9} ${y + 4})"/>`);
+      parts.push(`<circle cx="${x}" cy="${y}" r="6.2" fill="#e8891c"/><circle cx="${x}" cy="${y}" r="2.6" fill="#c4610f"/>`);
+    }
+    svg.innerHTML = parts.join('');
+  })();
+
+  // Hero slideshow inside the arch
+  (() => {
+    const imgs = $$('.slides img'), cap = $('#slide-caption'), count = $('#slide-count');
+    let i = 0;
+    const show = k => {
+      imgs[i].classList.remove('on'); i = k; imgs[i].classList.add('on');
+      cap.style.opacity = 0;
+      setTimeout(() => { cap.textContent = imgs[i].dataset.caption; cap.style.opacity = 1; }, 250);
+      count.textContent = `0${i + 1} / 0${imgs.length}`;
+    };
+    if (!calm) setInterval(() => show((i + 1) % imgs.length), 5200);
+  })();
+
+  // Reveal + count-up on scroll
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in'); io.unobserve(e.target);
+    e.target.querySelectorAll('[data-count]').forEach(el => {
+      if (calm) return;
+      const to = +el.dataset.count, dec = +(el.dataset.decimals || 0), suf = el.dataset.suffix || '', t0 = performance.now();
+      const tick = now => {
+        const p = Math.min(1, (now - t0) / 1400), v = to * (1 - Math.pow(1 - p, 3));
+        el.textContent = v.toFixed(dec) + suf;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+  }), { threshold: .15 });
+  $$('.reveal').forEach(el => io.observe(el));
+
+  // Rituals tabs (click + arrow keys)
+  (() => {
+    const tabs = $$('[role=tab]');
+    const select = tab => tabs.forEach(t => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', on);
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    tabs.forEach((t, k) => {
+      t.addEventListener('click', () => select(t));
+      t.addEventListener('keydown', e => {
+        const d = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+        if (!d) return;
+        e.preventDefault();
+        const next = tabs[(k + d + tabs.length) % tabs.length];
+        select(next); next.focus();
+      });
+    });
+  })();
+
+  // Real weddings: on wide screens the section pins and the mouse wheel moves the cards sideways
+  // (down = forward, up = back, 1:1 with the scroll). Phones keep a native swipe carousel.
+  (() => {
+    const sec = $('#weddings'), pin = sec.querySelector('.pin'), track = $('#track'), prev = $('#prev'), next = $('#next'), bar = $('#progress');
+    const wide = matchMedia('(min-width: 768px)');
+    const step = () => track.querySelector('.story').offsetWidth + parseFloat(getComputedStyle(track).columnGap);
+    let dist = 0, pinned = false;
+    // Shrink the cards until heading + cards + progress fit the pinned height (zoomed or short screens).
+    // Returns false when even small cards won't fit, so the section falls back to a swipe carousel.
+    const fit = () => {
+      track.style.removeProperty('--card-w');
+      for (let pass = 0; pass < 2; pass++) {
+        const pic = track.querySelector('.pic');
+        const rest = pin.querySelector('.wrap').offsetHeight - pic.offsetHeight;
+        const w = Math.min(340, (pin.clientHeight - 28 - rest) * .8);
+        if (w < 170) return false;
+        track.style.setProperty('--card-w', `${w}px`);
+      }
+      return true;
+    };
+    const show = pos => {
+      const seen = track.clientWidth / track.scrollWidth;
+      bar.style.width = `${(seen + pos * (1 - seen)) * 100}%`;
+      prev.disabled = pos <= .005;
+      next.disabled = pos >= .995;
+    };
+    const update = () => {
+      if (!pinned) {
+        const max = track.scrollWidth - track.clientWidth;
+        return show(max ? track.scrollLeft / max : 1);
+      }
+      const p = dist ? Math.min(1, Math.max(0, (nav.offsetHeight - sec.getBoundingClientRect().top) / dist)) : 1;
+      track.style.transform = `translate3d(${-p * dist}px, 0, 0)`;
+      show(p);
+    };
+    const layout = () => {
+      track.style.transform = sec.style.height = '';
+      sec.classList.toggle('scrolly', wide.matches);
+      pinned = wide.matches && fit();
+      if (pinned) {
+        dist = Math.max(0, track.scrollWidth - track.clientWidth);
+        sec.style.height = `${pin.offsetHeight + dist}px`;
+      } else {
+        sec.classList.remove('scrolly');
+        track.style.removeProperty('--card-w');
+      }
+      update();
+    };
+    // Arrows move one card: by scrolling the page when pinned, or the strip itself otherwise.
+    const go = dir => pinned
+      ? scrollBy({ top: dir * step(), behavior: calm ? 'auto' : 'smooth' })
+      : track.scrollBy({ left: dir * step(), behavior: calm ? 'auto' : 'smooth' });
+    prev.addEventListener('click', () => go(-1));
+    next.addEventListener('click', () => go(1));
+    addEventListener('scroll', update, { passive: true });
+    track.addEventListener('scroll', update, { passive: true });
+    addEventListener('resize', layout);
+    wide.addEventListener('change', layout);
+    layout();
+  })();
+
+  // Testimonials
+  (() => {
+    const quotes = $$('.quote'), dots = $('#dots');
+    let i = 0, timer;
+    quotes.forEach((_, k) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.setAttribute('aria-label', `Review ${k + 1}`);
+      b.addEventListener('click', () => { show(k); restart(); });
+      dots.append(b);
+    });
+    const show = k => {
+      i = (k + quotes.length) % quotes.length;
+      quotes.forEach((q, n) => q.hidden = n !== i);
+      [...dots.children].forEach((d, n) => d.setAttribute('aria-current', n === i));
+    };
+    const restart = () => { clearInterval(timer); if (!calm) timer = setInterval(() => show(i + 1), 8000); };
+    $('#q-prev').addEventListener('click', () => { show(i - 1); restart(); });
+    $('#q-next').addEventListener('click', () => { show(i + 1); restart(); });
+    $('.quotes').addEventListener('mouseenter', () => clearInterval(timer));
+    $('.quotes').addEventListener('mouseleave', restart);
+    show(0); restart();
+  })();
+
+  // Enquiry: no backend, the details open in WhatsApp ready for the couple to send.
+  $('#enquiry-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = new FormData(e.target);
+    const date = f.get('date') ? new Date(f.get('date')).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }) : 'Not fixed yet';
+    const lines = [
+      "Hi Mehrab, we'd like to plan our wedding with you.",
+      `Names: ${f.get('names')}`,
+      `Phone: ${f.get('phone')}`,
+      `Wedding date: ${date}`,
+      `City / venue: ${f.get('venue') || 'Not decided'}`,
+      `Guests: ${f.get('guests')}`,
+      `Budget: ${f.get('budget')}`,
+      `Functions: ${f.getAll('events').join(', ') || 'Not sure yet'}`,
+    ];
+    if (f.get('message').trim()) lines.push(`Notes: ${f.get('message').trim()}`);
+    window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener');
+  });
+</script>
+</body>
+</html>
