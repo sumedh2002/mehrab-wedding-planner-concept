@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mehrab Weddings &amp; Events — Wedding Planners in Jaipur</title>
+<title>Mehrab Weddings &amp; Events, wedding planners in Jaipur</title>
+<script>document.documentElement.classList.add('js');</script>
 <meta name="description" content="Mehrab plans and designs weddings across Rajasthan, from the roka to the vidaai. Full planning, partial planning and wedding-week management.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +19,18 @@
   then swap the photos in img/ and the couples in "Real weddings".
 -->
 <style>
+  /* Hallmark · checked: 2026-11-02 · genre: editorial (inferred)
+   * floor: 0 FAIL · fixed: 87 FAIL, 62 REFLEX (19, 26a, 26b, 29, 34, 38i, 39a, 40, 48, 50, 54, 58, 62, 63, 67, 71, 75) · structural: printed (44c, 58, F15)
+   * built: the project · redesign: polish · v2.0.0 */
+  /* Hallmark · dismissed 40 · the disabled carousel arrow is an inactive control, exempt from text contrast and still legible at 3.5:1 */
+  /* Hallmark · dismissed 49 · each ritual tab is a numeral, a name and a sub-label in a nowrap grid row, so no part of the label wraps */
+  /* Hallmark · answered F15 · this polish keeps the approved layout; one shared column gap across sections is a restyle decision */
+  /* Hallmark · reworded "Wedding planners · Jaipur, Rajasthan" and "We plan and design weddings across Rajasthan with one promise: your family gets to be guests at their own celebration." to "Jaipur wedding planners, so your family can simply be guests." · 54 and 58 fold the eyebrow into one sentence */
+  /* Hallmark · reworded "Every function, considered." to "The rituals" · 54 makes the eyebrow the heading */
+  /* Hallmark · reworded "Choose how much you'd like us to carry." to "How we help" · 54 makes the eyebrow the heading */
+  /* Hallmark · reworded "Weddings we've held." to "Real weddings" · 54 makes the eyebrow the heading */
+  /* Hallmark · reworded "Four steps to "qubool hai."" to "How it works" · 54 makes the eyebrow the heading, and qubool hai belongs to a nikah, not the pheras this page plans */
+  /* Hallmark · reworded "Let's begin with a conversation." to "Enquire" · 54 makes the eyebrow the heading */
   :root {
     --ivory: #f7f1e8;
     --ivory-2: #efe6d8;
@@ -30,7 +43,15 @@
     --gold-dark: #7a5c30;
     --gold-light: #d9bf8c;
     --marigold: #e8891c;
+    --marigold-deep: #c4610f;
+    --marigold-light: #f2b33d;
+    --leaf: #5f7a3a;
     --line: rgba(35, 27, 24, .14);
+    --rule-strong: #8c7d72;
+    --shadow: rgba(35, 27, 24, .42);
+    --on-dark: rgba(247, 241, 232, .84);
+    --on-dark-rule: rgba(247, 241, 232, .18);
+    --wa: #1a7a43;
     --serif: "Bodoni Moda", Didot, Georgia, serif;
     --sans: "Manrope", system-ui, sans-serif;
     --gutter: clamp(18px, 5vw, 72px);
@@ -44,66 +65,76 @@
   img { display: block; max-width: 100%; }
   a { color: inherit; text-decoration: none; }
   button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
-  h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--ink); line-height: 1.08; letter-spacing: -.01em; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--ink); line-height: 1.08; letter-spacing: -.01em; overflow-wrap: break-word; min-width: 0; }
+  h1, h2 { text-wrap: balance; }
+  p { text-wrap: pretty; }
   em { font-style: italic; color: var(--maroon); }
   :focus-visible { outline: 2px solid var(--maroon); outline-offset: 3px; }
+  .service.featured :focus-visible, .story.next:focus-visible, .words :focus-visible, footer :focus-visible { outline-color: var(--gold-light); }
   .wrap { max-width: 1280px; margin-inline: auto; padding-inline: var(--gutter); }
-  .label { display: inline-flex; align-items: center; gap: 12px; font: 600 12px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 20px; }
-  .label::before { content: ""; width: 26px; height: 1px; background: var(--gold); }
   .h2 { font-size: clamp(34px, 4.4vw, 60px); }
   section { padding-block: clamp(80px, 10vw, 140px); }
   .head { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: clamp(44px, 6vw, 72px); }
   .head p { max-width: 400px; }
 
   .arch { clip-path: url(#mehrab); -webkit-clip-path: url(#mehrab); }
-  .btn { display: inline-flex; align-items: center; gap: 12px; padding: 16px 30px; border-radius: 999px; background: var(--maroon); color: var(--ivory); font: 600 13px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; transition: background .3s, gap .3s var(--ease); }
-  .btn:hover { background: var(--maroon-2); gap: 18px; }
+  .btn { display: inline-flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 28px; border-radius: 999px; background: var(--maroon); color: var(--ivory); font: 600 16px/1 var(--sans); white-space: nowrap; transition: background-color .3s, transform .15s var(--ease); }
+  .btn:hover { background: var(--maroon-2); }
+  .btn:active { transform: translateY(1px); }
   .btn.light { background: var(--ivory); color: var(--maroon); }
   .btn.light:hover { background: var(--white); }
-  .more { display: inline-flex; align-items: center; gap: 10px; font: 600 13px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--ink); padding-bottom: 6px; border-bottom: 1px solid var(--gold); transition: gap .3s var(--ease); }
-  .more:hover { gap: 16px; }
+  .more { display: inline-flex; align-items: center; font: 600 16px/1 var(--sans); color: var(--ink); padding-bottom: 4px; border-bottom: 1px solid var(--gold-dark); transition: color .25s, transform .15s var(--ease); }
+  .more:hover { color: var(--maroon); }
+  .more:active { transform: translateY(1px); }
 
-  .reveal { opacity: 0; translate: 0 26px; transition: opacity .9s var(--ease), translate .9s var(--ease); transition-delay: var(--d, 0ms); }
-  .reveal.in { opacity: 1; translate: 0 0; }
+  .js .reveal { opacity: 0; translate: 0 26px; transition: opacity .9s var(--ease), translate .9s var(--ease); transition-delay: var(--d, 0ms); }
+  .js .reveal.in { opacity: 1; translate: 0 0; }
 
   /* Nav */
-  .nav { position: sticky; top: 0; z-index: 30; background: rgba(247, 241, 232, .92); backdrop-filter: blur(10px); border-bottom: 1px solid transparent; transition: border-color .3s; }
+  .nav { position: sticky; top: 0; z-index: 30; background: var(--ivory); border-bottom: 1px solid transparent; transition: border-color .3s; }
   .nav.scrolled { border-color: var(--line); }
   .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: var(--nav-h); }
   .logo { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); }
   .logo svg { width: 26px; height: 32px; color: var(--maroon); }
   .logo b { display: block; font: 500 21px/1 var(--serif); letter-spacing: .26em; }
-  .logo small { display: block; margin-top: 5px; font: 600 9.5px/1 var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--gold-dark); }
+  .logo small { display: block; margin-top: 4px; font: 500 12px/1 var(--sans); color: var(--gold-dark); }
   .nav ul { display: flex; gap: 34px; list-style: none; font-weight: 500; font-size: 15px; }
   .nav ul a { position: relative; }
   .nav ul a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 1px; background: var(--gold); transform: scaleX(0); transition: transform .35s var(--ease); }
   .nav ul a:hover::after { transform: scaleX(1); }
   .nav .btn { padding: 13px 22px; }
-  .menu-btn { display: none; padding: 10px 0 10px 14px; font: 600 13px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--ink); }
+  .menu-btn { display: none; padding: 12px 0 12px 16px; font: 600 16px/1 var(--sans); color: var(--ink); }
+  .menu-btn:active { transform: translateY(1px); }
   .nav-cta-item { display: none; }
 
   /* Hero */
   .hero { padding-block: clamp(24px, 4vw, 48px) clamp(72px, 9vw, 120px); }
-  .hero .wrap { display: grid; grid-template-columns: 1.08fr .92fr; gap: clamp(40px, 6vw, 96px); align-items: center; }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: clamp(40px, 6vw, 96px); align-items: center; }
   .hero h1 { font-size: clamp(44px, 5.6vw, 84px); line-height: 1.04; }
   .lede { font-size: clamp(17px, 1.5vw, 19px); max-width: 480px; margin: 28px 0 38px; }
   .hero .ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 22px 30px; }
   .stats { display: flex; gap: clamp(22px, 4vw, 48px); margin-top: 56px; padding-top: 30px; border-top: 1px solid var(--line); }
-  .stats b { display: block; font: 400 clamp(32px, 3.2vw, 44px)/1 var(--serif); color: var(--maroon); }
-  .stats span { display: block; margin-top: 8px; font-size: 13px; letter-spacing: .04em; }
+  /* Bodoni's display cut thins hairlines to nothing at this size; the text cut keeps figures legible. */
+  .stats b { display: block; font: 500 clamp(34px, 3.4vw, 46px)/1 var(--serif); font-variation-settings: "opsz" 14; color: var(--maroon); }
+  .stats span { display: block; margin-top: 8px; font-size: 14px; }
 
   .frame { position: relative; width: min(100%, 480px); margin-inline: auto 0; aspect-ratio: 3 / 4; }
   .outline { position: absolute; width: 100%; height: 100%; overflow: visible; pointer-events: none; color: var(--gold); }
   .frame .outline { top: -18px; left: 18px; }
   .slides { position: absolute; inset: 0; background: var(--ivory-2); }
-  .slides img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; scale: 1.08; transition: opacity 1.4s var(--ease), scale 7s linear; }
-  .slides img.on { opacity: 1; scale: 1; }
-  .toran { position: absolute; left: -7%; width: 114%; top: 31%; height: auto; overflow: visible; pointer-events: none; filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .18)); }
-  .booking { position: absolute; left: -40px; bottom: 44px; display: flex; align-items: center; gap: 14px; padding: 16px 20px; background: var(--white); box-shadow: 0 24px 50px -24px rgba(35, 27, 24, .45); }
-  .booking i { width: 9px; height: 9px; border-radius: 50%; background: #2f9e5a; box-shadow: 0 0 0 4px rgba(47, 158, 90, .16); }
-  .booking small { display: block; font: 600 10.5px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--gold-dark); }
+  .slides img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .js .slides img { opacity: 0; scale: 1.08; transition: opacity 1.4s var(--ease), scale 7s linear; }
+  .js .slides img.on { opacity: 1; scale: 1; }
+  .toran { position: absolute; left: -7%; width: 114%; top: 31%; height: auto; overflow: visible; pointer-events: none; filter: drop-shadow(0 3px 4px var(--shadow)); }
+  .toran .string { fill: none; stroke: var(--gold-dark); }
+  .toran .bloom { fill: var(--marigold); }
+  .toran .core { fill: var(--marigold-deep); }
+  .toran .bud { fill: var(--marigold-light); }
+  .toran .leaf { fill: var(--leaf); }
+  .booking { position: absolute; left: -40px; bottom: 44px; display: flex; align-items: center; gap: 14px; padding: 16px 20px; background: var(--white); box-shadow: 0 24px 50px -24px var(--shadow); }
+  .booking small { display: block; font: 500 13px/1 var(--sans); color: var(--gold-dark); }
   .booking b { display: block; margin-top: 6px; font: 400 19px/1 var(--serif); color: var(--ink); }
-  .caption { display: flex; justify-content: space-between; gap: 16px; margin-top: 26px; font-size: 13px; letter-spacing: .04em; }
+  .caption { display: flex; justify-content: space-between; gap: 16px; margin-top: 24px; font-size: 14px; }
   .caption span:first-child { font: italic 400 17px/1.3 var(--serif); color: var(--ink); transition: opacity .5s; }
   .caption .count { font-variant-numeric: tabular-nums; color: var(--gold-dark); white-space: nowrap; }
 
@@ -111,22 +142,23 @@
   .intro { text-align: center; padding-top: 0; }
   .ornament { width: 34px; height: 42px; margin: 0 auto 28px; color: var(--gold); }
   .intro p.statement { max-width: 940px; margin-inline: auto; font: 400 clamp(26px, 3.3vw, 44px)/1.3 var(--serif); color: var(--ink); }
-  .intro .sign { margin-top: 28px; font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-dark); }
+  .intro .sign { margin-top: 28px; font-size: 15px; color: var(--gold-dark); }
 
   /* Rituals */
   .rituals { background: var(--white); }
-  .rituals-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+  .rituals-grid { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
   [role=tablist] { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
-  [role=tab] { display: grid; grid-template-columns: 44px 1fr auto; align-items: baseline; gap: 12px; padding: 18px 4px; border-bottom: 1px solid var(--line); text-align: left; transition: padding .4s var(--ease), color .3s; }
-  [role=tab] .num { font: italic 400 17px/1 var(--serif); color: var(--gold); }
-  [role=tab] .name { font: 400 clamp(24px, 2.4vw, 32px)/1.1 var(--serif); color: var(--ink); transition: color .3s; }
-  [role=tab] .what { font-size: 13px; color: var(--text); opacity: 0; translate: -8px 0; transition: opacity .3s, translate .4s var(--ease); }
-  [role=tab]:hover { padding-left: 12px; }
-  [role=tab][aria-selected=true] { padding-left: 12px; }
+  [role=tab] { display: grid; grid-template-columns: 44px 1fr auto; align-items: baseline; gap: 12px; padding: 18px 4px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
+  [role=tab]:active .name { transform: translateY(1px); }
+  [role=tab] .num { font: italic 400 17px/1 var(--serif); color: var(--gold-dark); }
+  [role=tab] .name { font: 400 clamp(24px, 2.4vw, 32px)/1.1 var(--serif); color: var(--ink); white-space: nowrap; }
+  [role=tab] .num, [role=tab] .name { transition: translate .4s var(--ease), color .3s; }
+  [role=tab] .what { font-size: 14px; color: var(--text); white-space: nowrap; opacity: 0; translate: -8px 0; transition: opacity .3s, translate .4s var(--ease); }
+  [role=tab]:hover .num, [role=tab]:hover .name, [role=tab][aria-selected=true] .num, [role=tab][aria-selected=true] .name { translate: 12px 0; }
   [role=tab][aria-selected=true] .name { color: var(--maroon); font-style: italic; }
   [role=tab][aria-selected=true] .what, [role=tab]:hover .what { opacity: 1; translate: 0 0; }
   .panels { display: grid; }
-  [role=tabpanel] { grid-area: 1 / 1; display: grid; grid-template-columns: .9fr 1fr; gap: clamp(24px, 3vw, 44px); align-items: center; }
+  [role=tabpanel] { grid-area: 1 / 1; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1fr); gap: clamp(24px, 3vw, 44px); align-items: center; }
   [role=tabpanel][hidden] { display: none; }
   [role=tabpanel]:not([hidden]) { animation: fade .7s var(--ease); }
   @keyframes fade { from { opacity: 0; translate: 0 12px; } }
@@ -135,34 +167,35 @@
   .panel-img .outline { top: -12px; left: 12px; }
   [role=tabpanel] h3 { font-size: clamp(30px, 3vw, 42px); margin-bottom: 14px; }
   [role=tabpanel] h3 + p { margin-bottom: 24px; }
-  .handle-label { font: 600 11px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 12px; }
+  .handle-label { font: 600 15px/1.3 var(--sans); color: var(--gold-dark); margin-bottom: 12px; }
   .handle { list-style: none; display: grid; gap: 10px; }
   .handle li { display: flex; gap: 12px; align-items: baseline; color: var(--ink); }
   .handle li::before { content: ""; flex: none; width: 7px; height: 7px; rotate: 45deg; background: var(--gold); translate: 0 -2px; }
 
   /* Services (arch-topped cards) */
-  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
+  .services-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
   .service { position: relative; display: flex; flex-direction: column; padding: 76px clamp(24px, 2.6vw, 38px) 38px; background: var(--white); border: 1px solid var(--line); border-radius: 220px 220px 4px 4px / 150px 150px 4px 4px; transition: translate .5s var(--ease), box-shadow .5s var(--ease); }
-  .service:hover { translate: 0 -6px; box-shadow: 0 30px 60px -36px rgba(35, 27, 24, .4); }
-  .service .when { font: 600 11px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-dark); text-align: center; }
-  .service h3 { font-size: clamp(28px, 2.6vw, 36px); text-align: center; margin: 14px 0 16px; }
+  .service:hover { translate: 0 -6px; box-shadow: 0 30px 60px -36px var(--shadow); }
+  .service h3 { font-size: clamp(28px, 2.6vw, 36px); text-align: center; }
+  .service .when { font: 500 15px/1.3 var(--sans); color: var(--gold-dark); text-align: center; margin: 8px 0 16px; }
   .service > p { text-align: center; margin-bottom: 26px; }
   .service ul { list-style: none; border-top: 1px solid var(--line); margin-bottom: 30px; flex: 1; }
   .service li { padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--ink); font-size: 15px; }
   .service .more { align-self: center; }
-  .service.featured { background: var(--maroon); border-color: var(--maroon); color: rgba(247, 241, 232, .82); }
+  .service.featured { background: var(--maroon); border-color: var(--maroon); color: var(--on-dark); }
   .service.featured h3, .service.featured li { color: var(--ivory); }
   .service.featured .when { color: var(--gold-light); }
-  .service.featured ul, .service.featured li { border-color: rgba(247, 241, 232, .18); }
+  .service.featured ul, .service.featured li { border-color: var(--on-dark-rule); }
   .service.featured .more { color: var(--ivory); border-color: var(--gold-light); }
-  .tag { position: absolute; top: 26px; left: 50%; translate: -50% 0; padding: 6px 12px; border: 1px solid var(--gold-light); border-radius: 999px; font: 600 10px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--gold-light); white-space: nowrap; }
+  .tag { position: absolute; top: 26px; left: 50%; translate: -50% 0; padding: 6px 12px; border: 1px solid var(--gold-light); border-radius: 999px; font: 500 13px/1 var(--sans); color: var(--gold-light); white-space: nowrap; }
 
   /* Real weddings carousel */
   .weddings { background: var(--ivory-2); overflow-x: clip; }
   .controls { display: flex; gap: 10px; }
-  .controls button { display: grid; place-items: center; width: 52px; height: 52px; border: 1px solid var(--ink); border-radius: 50%; transition: background .3s, color .3s, opacity .3s; }
+  .controls button { display: grid; place-items: center; width: 52px; height: 52px; border: 1px solid var(--ink); border-radius: 50%; transition: background-color .3s, color .3s, border-color .3s, transform .15s var(--ease); }
   .controls button:hover:not(:disabled) { background: var(--ink); color: var(--ivory); }
-  .controls button:disabled { opacity: .3; cursor: default; }
+  .controls button:active:not(:disabled) { transform: scale(.96); }
+  .controls button:disabled { background: var(--ivory); border-color: var(--line); color: var(--rule-strong); cursor: not-allowed; }
   .controls svg { width: 18px; height: 18px; }
   .track { display: flex; gap: clamp(20px, 2.4vw, 32px); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 8px; margin-right: calc(var(--gutter) * -1); padding-right: var(--gutter); }
   .track::-webkit-scrollbar { display: none; }
@@ -170,96 +203,96 @@
   .story .pic { position: relative; aspect-ratio: 4 / 5; overflow: hidden; }
   .story img { width: 100%; height: 100%; object-fit: cover; transition: scale 1.2s var(--ease); }
   .story:hover img { scale: 1.05; }
-  .story .where { margin-top: 22px; font: 600 11px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-dark); }
-  .story h3 { font-size: 30px; margin: 10px 0 6px; }
+  .story h3 { font-size: 30px; margin: 20px 0 4px; }
+  .story .where { font: 500 15px/1.3 var(--sans); color: var(--gold-dark); margin-bottom: 4px; }
   .story .meta { font-size: 14px; }
   .story.next .pic { display: grid; place-items: center; background: var(--maroon); text-align: center; padding: 40px 28px 0; }
   .story.next .pic p { font: italic 400 30px/1.2 var(--serif); color: var(--ivory); }
-  .story.next .pic span { display: block; margin-top: 22px; font: 600 12px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--gold-light); }
+  .story.next .pic span { display: block; margin-top: 20px; font: 600 15px/1 var(--sans); color: var(--gold-light); }
   .progress { height: 1px; background: var(--line); margin-top: 40px; }
-  .progress i { display: block; height: 100%; width: 30%; background: var(--maroon); transform-origin: left; transition: width .3s var(--ease); }
+  .progress i { display: block; height: 100%; width: 100%; background: var(--maroon); transform: scaleX(.3); transform-origin: left; transition: transform .3s var(--ease); }
   /* Wide screens: the section pins and vertical scrolling drives the cards sideways (section height is set in JS). */
   .weddings.scrolly { padding-block: 0; }
   .scrolly .pin { position: sticky; top: var(--nav-h); height: calc(100vh - var(--nav-h)); display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
   .scrolly .head { margin-bottom: clamp(14px, 3vh, 36px); }
-  .scrolly .label { margin-bottom: 10px; }
   .scrolly .h2 { font-size: clamp(30px, 3.4vw, 50px); }
-  .scrolly .story .where { margin-top: 14px; }
-  .scrolly .story h3 { font-size: 25px; margin: 6px 0 2px; }
+  .scrolly .story h3 { font-size: 25px; margin: 12px 0 2px; }
   .scrolly .track { overflow: visible; scroll-snap-type: none; margin-right: 0; padding-right: 0; will-change: transform; }
   .scrolly .story { flex-basis: var(--card-w, 300px); }
   .scrolly .progress { margin-top: clamp(14px, 3vh, 32px); }
   .scrolly .progress i { transition: none; }
 
   /* Process */
-  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; list-style: none; position: relative; counter-reset: s; }
+  .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; list-style: none; position: relative; counter-reset: s; }
   .steps::before { content: ""; position: absolute; top: 31px; left: 32px; right: 12%; border-top: 1px dashed var(--gold); }
   .steps li { position: relative; counter-increment: s; }
   .steps li::before { content: counter(s, upper-roman); display: grid; place-items: center; width: 64px; height: 64px; margin-bottom: 26px; background: var(--ivory); border: 1px solid var(--gold); border-radius: 32px 32px 4px 4px; font: italic 400 22px/1 var(--serif); color: var(--maroon); }
   .steps h3 { font-size: 26px; margin-bottom: 10px; }
 
   /* Testimonials */
-  .words { background: var(--maroon); color: rgba(247, 241, 232, .85); text-align: center; }
-  .words .label { color: var(--gold-light); }
-  .words .label::before { background: var(--gold-light); }
+  .words { background: var(--maroon); color: var(--on-dark); text-align: center; }
+  .words h2 { color: var(--ivory); margin-bottom: 20px; }
   .quotes { display: grid; max-width: 960px; margin-inline: auto; }
   .quote { grid-area: 1 / 1; }
   .quote[hidden] { display: none; }
   .quote:not([hidden]) { animation: fade .8s var(--ease); }
   .quote p { font: italic 400 clamp(24px, 3vw, 40px)/1.35 var(--serif); color: var(--ivory); }
-  .quote cite { display: block; margin-top: 30px; font-style: normal; font-size: 14px; letter-spacing: .06em; }
+  .quote cite { display: block; margin-top: 28px; font-style: normal; font-size: 15px; }
   .quote cite b { display: block; font: 400 22px/1.2 var(--serif); color: var(--gold-light); letter-spacing: 0; margin-bottom: 4px; }
   .stars { color: var(--gold-light); letter-spacing: 6px; margin-bottom: 26px; }
   .q-nav { display: flex; justify-content: center; align-items: center; gap: 22px; margin-top: 44px; }
-  .q-nav button.arrow { display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid rgba(247, 241, 232, .4); border-radius: 50%; color: var(--ivory); transition: background .3s, color .3s; }
+  .q-nav button.arrow { display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid var(--gold-light); border-radius: 50%; color: var(--ivory); transition: background-color .3s, color .3s, transform .15s var(--ease); }
+  .q-nav button.arrow:active { transform: scale(.96); }
   .q-nav button.arrow:hover { background: var(--ivory); color: var(--maroon); }
   .q-nav svg { width: 16px; height: 16px; }
   .dots { display: flex; gap: 10px; }
-  .dots button { width: 9px; height: 9px; border-radius: 50%; border: 1px solid var(--gold-light); transition: background .3s, width .3s var(--ease); }
-  .dots button[aria-current=true] { background: var(--gold-light); width: 26px; border-radius: 6px; }
-  .rating { margin-top: 30px; font-size: 13px; letter-spacing: .08em; color: rgba(247, 241, 232, .7); }
+  .dots button { width: 10px; height: 10px; border-radius: 50%; border: 1px solid var(--gold-light); transition: background-color .3s, transform .3s var(--ease); }
+  .dots button[aria-current=true] { background: var(--gold-light); transform: scale(1.3); }
+  .rating { margin-top: 28px; font-size: 15px; color: var(--on-dark); }
 
   /* Enquiry */
   .enquire { background: var(--ivory-2); }
-  .enquire .wrap { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(36px, 6vw, 96px); align-items: start; }
+  .enquire .wrap { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(36px, 6vw, 96px); align-items: start; }
   .contact-list { list-style: none; display: grid; gap: 18px; margin-top: 36px; }
   .contact-list li { display: flex; gap: 16px; align-items: flex-start; color: var(--ink); }
   .contact-list svg { flex: none; width: 22px; height: 22px; color: var(--maroon); fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; margin-top: 2px; }
   .contact-list small { display: block; font-size: 13px; color: var(--text); }
   .contact-list a:hover { color: var(--maroon); }
-  .form { background: var(--white); padding: clamp(28px, 4vw, 52px); border-radius: 220px 220px 4px 4px / 110px 110px 4px 4px; padding-top: clamp(70px, 8vw, 96px); box-shadow: 0 40px 80px -50px rgba(35, 27, 24, .45); }
+  .form { background: var(--white); padding: clamp(28px, 4vw, 52px); border-radius: 220px 220px 4px 4px / 110px 110px 4px 4px; padding-top: clamp(70px, 8vw, 96px); box-shadow: 0 40px 80px -50px var(--shadow); }
   .form h3 { font-size: clamp(28px, 2.6vw, 34px); text-align: center; margin-bottom: 8px; }
   .form > p { text-align: center; margin-bottom: 30px; }
   .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 22px; }
-  .fields label, .fields legend { display: grid; gap: 8px; font: 600 11px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--ink); }
+  .fields label, .fields legend { display: grid; gap: 8px; font: 600 14px/1.2 var(--sans); color: var(--ink); }
   .full { grid-column: 1 / -1; }
-  input, select, textarea { width: 100%; font: 400 16px/1.4 var(--sans); color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid rgba(35, 27, 24, .3); padding: 10px 0; border-radius: 0; letter-spacing: 0; text-transform: none; }
+  input, select, textarea { width: 100%; font: 400 16px/1.4 var(--sans); color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid var(--rule-strong); padding: 10px 0; border-radius: 0; letter-spacing: 0; text-transform: none; }
   input:focus, select:focus, textarea:focus { outline: none; border-color: var(--maroon); }
   textarea { resize: vertical; min-height: 80px; }
   fieldset { border: 0; }
   fieldset legend { margin-bottom: 12px; }
   .chips { display: flex; flex-wrap: wrap; gap: 8px; }
   .chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
-  .chip span { display: inline-block; padding: 9px 16px; border: 1px solid rgba(35, 27, 24, .25); border-radius: 999px; font: 500 14px/1 var(--sans); letter-spacing: 0; text-transform: none; color: var(--text); cursor: pointer; transition: all .25s; }
+  .chip span { display: inline-block; padding: 9px 16px; border: 1px solid var(--rule-strong); border-radius: 999px; font: 500 15px/1 var(--sans); color: var(--text); cursor: pointer; transition: background-color .25s, border-color .25s, color .25s; }
+  .chip span:active { transform: translateY(1px); }
   .chip input:checked + span { background: var(--maroon); border-color: var(--maroon); color: var(--ivory); }
   .chip input:focus-visible + span { outline: 2px solid var(--maroon); outline-offset: 2px; }
   .form .btn { width: 100%; justify-content: center; margin-top: 30px; }
   .form .note { margin-top: 14px; text-align: center; font-size: 13px; }
 
   /* Footer */
-  footer { background: var(--maroon-2); color: rgba(247, 241, 232, .74); padding-top: 72px; }
-  footer .wrap { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 36px; }
+  footer { background: var(--maroon-2); color: var(--on-dark); padding-top: 72px; }
+  footer .wrap { display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr)); gap: 36px; }
   footer .logo { color: var(--ivory); }
   footer .logo svg { color: var(--gold-light); }
   footer .logo small { color: var(--gold-light); }
   footer .about { margin-top: 18px; max-width: 320px; }
-  footer h4 { font: 600 11px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 16px; }
-  footer li { list-style: none; margin-bottom: 9px; }
+  footer h4 { font: 600 15px/1.2 var(--sans); color: var(--gold-light); margin-bottom: 16px; }
+  footer li { list-style: none; margin-bottom: 8px; }
+  footer li a { white-space: nowrap; }
   footer a:hover { color: var(--ivory); }
-  .legal { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-top: 30px; padding: 24px 0 28px; border-top: 1px solid rgba(247, 241, 232, .14); font-size: 13px; }
+  .legal { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-top: 30px; padding: 24px 0 28px; border-top: 1px solid var(--on-dark-rule); font-size: 14px; }
   .legal a { color: var(--ivory); text-decoration: underline; text-underline-offset: 3px; }
 
-  .wa { position: fixed; right: 22px; bottom: 22px; z-index: 40; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: #1f8f4e; color: #fff; box-shadow: 0 12px 28px -8px rgba(0, 0, 0, .35); transition: translate .3s var(--ease); }
+  .wa { position: fixed; right: 22px; bottom: 22px; z-index: 40; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: var(--wa); color: var(--white); box-shadow: 0 12px 28px -8px var(--shadow); transition: translate .3s var(--ease); }
   .wa:hover { translate: 0 -3px; }
   .wa svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
@@ -271,43 +304,44 @@
     .nav.open ul a::after { display: none; }
     .nav.open .nav-cta-item { display: block; }
     .nav-cta-item a { color: var(--maroon); font-weight: 600; }
-    .hero .wrap, .rituals-grid, .enquire .wrap { grid-template-columns: 1fr; }
+    .hero .wrap, .rituals-grid, .enquire .wrap { grid-template-columns: minmax(0, 1fr); }
     .frame { margin: 24px auto 0; width: min(88%, 440px); }
     .booking { left: -18px; }
     .services-grid { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; }
     .steps { grid-template-columns: 1fr 1fr; gap: 44px 28px; }
     .steps::before { display: none; }
-    footer .wrap { grid-template-columns: 1fr 1fr; }
+    footer .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .head { flex-direction: column; align-items: start; }
   }
   @media (max-width: 640px) {
     :root { --nav-h: 70px; }
     .logo b { font-size: 18px; }
     .stats { justify-content: space-between; }
-    .stats span { font-size: 12px; }
+    .stats span { font-size: 13px; }
     .booking { left: -10px; bottom: 26px; padding: 12px 14px; }
     .booking b { font-size: 16px; }
     [role=tablist] { flex-direction: row; overflow-x: auto; scrollbar-width: none; border: 0; gap: 8px; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); }
     [role=tablist]::-webkit-scrollbar { display: none; }
     [role=tab] { display: block; flex: none; padding: 10px 18px; border: 1px solid var(--line); border-radius: 999px; }
-    [role=tab]:hover, [role=tab][aria-selected=true] { padding-left: 18px; }
+    [role=tab]:hover .name, [role=tab][aria-selected=true] .name { translate: none; }
     [role=tab] .num, [role=tab] .what { display: none; }
     [role=tab] .name { font-size: 19px; }
     [role=tab][aria-selected=true] { background: var(--maroon); border-color: var(--maroon); }
     [role=tab][aria-selected=true] .name { color: var(--ivory); }
-    [role=tabpanel] { grid-template-columns: 1fr; }
+    [role=tabpanel] { grid-template-columns: minmax(0, 1fr); }
     .panel-img { width: min(78%, 320px); margin-inline: auto; }
     .steps { grid-template-columns: 1fr; }
     .fields { grid-template-columns: 1fr; }
     .form { border-radius: 160px 160px 4px 4px / 80px 80px 4px 4px; }
-    footer .wrap > div:first-child { grid-column: 1 / -1; }
+    footer .wrap { grid-template-columns: minmax(0, 1fr); }
     .legal { flex-direction: column; padding-bottom: 90px; }
     .wa { right: 14px; bottom: 14px; width: 52px; height: 52px; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .reveal { opacity: 1; translate: none; transition: none; }
-    .slides img { transition: opacity .3s; scale: 1; }
+    .js .reveal { opacity: 1; translate: none; transition: none; }
+    .js .slides img { transition: opacity .3s; scale: 1; }
+    [role=tab] .num, [role=tab] .name, [role=tab] .what { transition: none; }
   }
 </style>
 </head>
@@ -325,14 +359,14 @@
   <div class="wrap">
     <a href="#top" class="logo" aria-label="Mehrab Weddings &amp; Events, home">
       <svg viewBox="0 0 26 32" fill="none" aria-hidden="true"><path d="M2 31V13.5C2 7.5 6.5 3.5 13 1.5c6.5 2 11 6 11 12V31" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 31V15.5c0-3.2 2.2-5.8 5.5-7 3.3 1.2 5.5 3.8 5.5 7V31" stroke="currentColor" stroke-width="1.6"/></svg>
-      <span><b>MEHRAB</b><small>Weddings &amp; Events</small></span>
+      <span><b>MEHRAB</b><small>Weddings &amp; events</small></span>
     </a>
     <ul id="nav-links">
       <li><a href="#rituals">Rituals</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#weddings">Weddings</a></li>
       <li><a href="#words">Kind words</a></li>
-      <li class="nav-cta-item"><a href="#enquire">Plan your wedding →</a></li>
+      <li class="nav-cta-item"><a href="#enquire">Plan your wedding</a></li>
     </ul>
     <a href="#enquire" class="btn">Plan your wedding</a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
@@ -342,12 +376,11 @@
 <header class="hero" id="top">
   <div class="wrap">
     <div>
-      <p class="label reveal">Wedding planners · Jaipur, Rajasthan</p>
-      <h1 class="reveal" style="--d:80ms">Roka to vidaai,<br><em>beautifully held.</em></h1>
-      <p class="lede reveal" style="--d:160ms">We plan and design weddings across Rajasthan with one promise: your family gets to be guests at their own celebration.</p>
+      <h1 class="reveal">Roka to vidaai, beautifully held.</h1>
+      <p class="lede reveal" style="--d:120ms">Jaipur wedding planners, so your family can simply be guests.</p>
       <div class="ctas reveal" style="--d:240ms">
-        <a href="#enquire" class="btn">Plan your wedding <span aria-hidden="true">→</span></a>
-        <a href="#weddings" class="more">See our weddings <span aria-hidden="true">→</span></a>
+        <a href="#enquire" class="btn">Plan your wedding</a>
+        <a href="#weddings" class="more">See our weddings</a>
       </div>
       <div class="stats reveal" style="--d:320ms">
         <div><b data-count="250" data-suffix="+">250+</b><span>Weddings planned</span></div>
@@ -365,7 +398,7 @@
           <img src="img/hero-garlands.jpg" alt="Strings of marigold and jasmine garlands" data-caption="Marigold and jasmine for the haldi, Jodhpur" width="900" height="1200" loading="lazy">
         </div>
         <svg class="toran" id="toran" viewBox="0 0 400 70" aria-hidden="true"></svg>
-        <div class="booking"><i aria-hidden="true"></i><div><small>Now booking</small><b>Winter 2026 – 27</b></div></div>
+        <div class="booking"><div><small>Now booking</small><b>Winter 2026 to 2027</b></div></div>
       </div>
       <p class="caption" aria-live="polite"><span id="slide-caption">Pheras under a thousand strands, Udaipur</span><span class="count" id="slide-count">01 / 03</span></p>
     </div>
@@ -376,7 +409,7 @@
   <section class="intro">
     <div class="wrap">
       <svg class="ornament" viewBox="0 0 34 42" fill="none" aria-hidden="true"><path d="M2 41V18C2 10 8 5 17 2c9 3 15 8 15 16v23" stroke="currentColor" stroke-width="1.3"/><path d="M17 14l3 4-3 4-3-4z" fill="currentColor"/></svg>
-      <p class="statement reveal">We don't just plan weddings. We <em>hold</em> them: every ritual, every relative, every last marigold, so the only thing you have to do is be there.</p>
+      <p class="statement reveal">We don’t just plan weddings. We <em>hold</em> them: every ritual, every relative, every last marigold, so the only thing you have to do is be there.</p>
       <p class="sign reveal">The Mehrab team</p>
     </div>
   </section>
@@ -384,8 +417,8 @@
   <section class="rituals" id="rituals">
     <div class="wrap">
       <div class="head">
-        <div><p class="label">The rituals</p><h2 class="h2">Every function, <em>considered.</em></h2></div>
-        <p>An Indian wedding is six celebrations, not one. Choose a ritual to see what we take off your family's hands.</p>
+        <div><h2 class="h2">The rituals</h2></div>
+        <p>An Indian wedding is six celebrations, not one. Choose a ritual to see what we take off your family’s hands.</p>
       </div>
       <div class="rituals-grid">
         <div role="tablist" aria-label="Wedding rituals">
@@ -441,31 +474,31 @@
   <section id="services">
     <div class="wrap">
       <div class="head">
-        <div><p class="label">How we help</p><h2 class="h2">Choose how much <em>you'd like us to carry.</em></h2></div>
+        <div><h2 class="h2">How we help</h2></div>
         <p>Every wedding has one lead planner from the first call to the last guest home, whichever way you work with us.</p>
       </div>
       <div class="services-grid">
         <article class="service reveal">
-          <p class="when">From 12 months out</p>
           <h3>Full planning</h3>
+          <p class="when">From 12 months out</p>
           <p>Every function, from first idea to the final vidaai: venue, design, vendors, guests and the whole weekend.</p>
           <ul><li>Venue search and booking</li><li>Complete décor design</li><li>Every vendor, booked and managed</li><li>Guest travel and hospitality</li><li>Our team on every day</li></ul>
-          <a href="#enquire" class="more">Enquire <span aria-hidden="true">→</span></a>
+          <a href="#enquire" class="more">Ask about full planning</a>
         </article>
         <article class="service featured reveal" style="--d:100ms">
           <span class="tag">Most chosen</span>
-          <p class="when">From 6 months out</p>
           <h3>Partial planning</h3>
-          <p>You've made a start, and we finish it: the bookings, design and logistics you haven't got to yet.</p>
+          <p class="when">From 6 months out</p>
+          <p>You’ve made a start, and we finish it: the bookings, design and logistics you haven’t got to yet.</p>
           <ul><li>Plan and budget review</li><li>Décor design and production</li><li>Vendor bookings and briefs</li><li>Guest hospitality desk</li><li>Our team on the main days</li></ul>
-          <a href="#enquire" class="more">Enquire <span aria-hidden="true">→</span></a>
+          <a href="#enquire" class="more">Ask about partial planning</a>
         </article>
         <article class="service reveal" style="--d:200ms">
-          <p class="when">The final 6 weeks</p>
           <h3>Wedding-week management</h3>
-          <p>You've planned it all. We step in to confirm every detail and run the week, so you can enjoy it.</p>
+          <p class="when">The final 6 weeks</p>
+          <p>You’ve planned it all. We step in to confirm every detail and run the week, so you can enjoy it.</p>
           <ul><li>Vendor confirmations</li><li>Run of show for each function</li><li>Guest arrival desk</li><li>On-site coordinators</li></ul>
-          <a href="#enquire" class="more">Enquire <span aria-hidden="true">→</span></a>
+          <a href="#enquire" class="more">Ask about wedding-week help</a>
         </article>
       </div>
     </div>
@@ -475,20 +508,20 @@
     <div class="pin">
     <div class="wrap">
       <div class="head">
-        <div><p class="label">Real weddings</p><h2 class="h2">Weddings we've <em>held.</em></h2></div>
+        <div><h2 class="h2">Real weddings</h2></div>
         <div class="controls">
           <button type="button" id="prev" aria-label="Previous weddings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
           <button type="button" id="next" aria-label="Next weddings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
       </div>
       <div class="track" id="track">
-        <a href="#" class="story"><div class="pic arch"><img src="img/w-gazebo.jpg" alt="Garden gazebo with florals and dressed chairs" loading="lazy" width="720" height="900"></div><p class="where">Udaipur · Lakeside garden</p><h3>Ishita &amp; Raghav</h3><p class="meta">3 days · 280 guests · 5 functions</p></a>
-        <a href="#" class="story"><div class="pic arch"><img src="img/w-goa-beach.jpg" alt="Draped ceremony arch with palm fronds and pink blooms on the sand" loading="lazy" width="720" height="900"></div><p class="where">Goa · Beachfront pheras</p><h3>Aisha &amp; Karan</h3><p class="meta">3 days · 160 guests · 5 functions</p></a>
-        <a href="#" class="story"><div class="pic arch"><img src="img/w-pushkar.jpg" alt="Long dinner table with blush florals under chandeliers" loading="lazy" width="720" height="900"></div><p class="where">Pushkar · Desert retreat</p><h3>Tara &amp; Vikram</h3><p class="meta">2 days · 120 guests · 4 functions</p></a>
-        <a href="#" class="story"><div class="pic arch"><img src="img/w-alibaug.jpg" alt="Rows of white chairs on a seaside lawn facing the water" loading="lazy" width="720" height="900"></div><p class="where">Alibaug · Seaside lawn</p><h3>Naina &amp; Rohan</h3><p class="meta">2 days · 220 guests · 4 functions</p></a>
-        <a href="#" class="story"><div class="pic arch"><img src="img/w-goa.jpg" alt="Garden table with blue napkins and yellow flowers" loading="lazy" width="720" height="900"></div><p class="where">Coorg · Coffee estate</p><h3>Meher &amp; Aditya</h3><p class="meta">2 days · 90 guests · 3 functions</p></a>
-        <a href="#" class="story"><div class="pic arch"><img src="img/w-jaipur.jpg" alt="Bridal bouquet of blush roses and succulents" loading="lazy" width="720" height="900"></div><p class="where">Jaipur · Heritage haveli</p><h3>Zoya &amp; Kabir</h3><p class="meta">3 days · 350 guests · 6 functions</p></a>
-        <a href="#enquire" class="story next"><div class="pic arch"><div><p>Your wedding could be next.</p><span>Start planning →</span></div></div><p class="where">Booking winter 2026 – 27</p><h3>Your story</h3><p class="meta">Tell us your dates</p></a>
+        <a href="#" class="story"><div class="pic arch"><img src="img/w-gazebo.jpg" alt="Garden gazebo with florals and dressed chairs" loading="lazy" width="720" height="900"></div><h3>Ishita &amp; Raghav</h3><p class="where">Lakeside garden, Udaipur</p><p class="meta">3 days, 280 guests, 5 functions</p></a>
+        <a href="#" class="story"><div class="pic arch"><img src="img/w-goa-beach.jpg" alt="Draped ceremony arch with palm fronds and pink blooms on the sand" loading="lazy" width="720" height="900"></div><h3>Aisha &amp; Karan</h3><p class="where">Beachfront pheras, Goa</p><p class="meta">3 days, 160 guests, 5 functions</p></a>
+        <a href="#" class="story"><div class="pic arch"><img src="img/w-pushkar.jpg" alt="Long dinner table with blush florals under chandeliers" loading="lazy" width="720" height="900"></div><h3>Tara &amp; Vikram</h3><p class="where">Desert retreat, Pushkar</p><p class="meta">2 days, 120 guests, 4 functions</p></a>
+        <a href="#" class="story"><div class="pic arch"><img src="img/w-alibaug.jpg" alt="Rows of white chairs on a seaside lawn facing the water" loading="lazy" width="720" height="900"></div><h3>Naina &amp; Rohan</h3><p class="where">Seaside lawn, Alibaug</p><p class="meta">2 days, 220 guests, 4 functions</p></a>
+        <a href="#" class="story"><div class="pic arch"><img src="img/w-goa.jpg" alt="Garden table with blue napkins and yellow flowers" loading="lazy" width="720" height="900"></div><h3>Meher &amp; Aditya</h3><p class="where">Coffee estate, Coorg</p><p class="meta">2 days, 90 guests, 3 functions</p></a>
+        <a href="#" class="story"><div class="pic arch"><img src="img/w-jaipur.jpg" alt="Bridal bouquet of blush roses and succulents" loading="lazy" width="720" height="900"></div><h3>Zoya &amp; Kabir</h3><p class="where">Heritage haveli, Jaipur</p><p class="meta">3 days, 350 guests, 6 functions</p></a>
+        <a href="#enquire" class="story next"><div class="pic arch"><div><p>Your wedding could be next.</p><span>Start planning</span></div></div><h3>Your story</h3><p class="where">Booking winter 2026 to 2027</p><p class="meta">Tell us your dates</p></a>
       </div>
       <div class="progress" aria-hidden="true"><i id="progress"></i></div>
     </div>
@@ -498,8 +531,8 @@
   <section id="process">
     <div class="wrap">
       <div class="head">
-        <div><p class="label">How it works</p><h2 class="h2">Four steps to <em>"qubool hai."</em></h2></div>
-        <p>Start a year out or three months out. Either way, you'll always know what's decided, what's next and who's handling it.</p>
+        <div><h2 class="h2">How it works</h2></div>
+        <p>Start a year out or three months out. Either way, you’ll always know what’s decided, what’s next and who’s handling it.</p>
       </div>
       <ol class="steps">
         <li class="reveal"><h3>Consultation</h3><p>A relaxed first meeting about your dates, guests, budget and the feeling you want.</p></li>
@@ -512,12 +545,12 @@
 
   <section class="words" id="words">
     <div class="wrap">
-      <p class="label">Kind words</p>
+      <h2 class="h2">Kind words</h2>
       <div class="stars" aria-hidden="true">★★★★★</div>
       <div class="quotes" aria-live="polite">
-        <blockquote class="quote"><p>“From the haldi to the reception, everything ran on time. Our parents actually got to sit down and enjoy their own children's wedding.”</p><cite><b>Riya &amp; Kabir</b>Jaipur · February 2025</cite></blockquote>
-        <blockquote class="quote" hidden><p>“They found us a haveli we'd never have found ourselves and kept us under budget. Every single update came on WhatsApp, which made it so easy.”</p><cite><b>Ananya &amp; Dev</b>Udaipur · December 2024</cite></blockquote>
-        <blockquote class="quote" hidden><p>“The mandap was exactly what I'd pinned for two years. Two months on, our guests are still talking about the sangeet.”</p><cite><b>Sneha &amp; Arjun</b>Jodhpur · November 2024</cite></blockquote>
+        <blockquote class="quote"><p>“From the haldi to the reception, everything ran on time. Our parents actually got to sit down and enjoy their own children’s wedding.”</p><cite><b>Riya &amp; Kabir</b>Jaipur, February 2025</cite></blockquote>
+        <blockquote class="quote" hidden><p>“They found us a haveli we’d never have found ourselves and kept us under budget. Every single update came on WhatsApp, which made it so easy.”</p><cite><b>Ananya &amp; Dev</b>Udaipur, December 2024</cite></blockquote>
+        <blockquote class="quote" hidden><p>“The mandap was exactly what I’d pinned for two years. Two months on, our guests are still talking about the sangeet.”</p><cite><b>Sneha &amp; Arjun</b>Jodhpur, November 2024</cite></blockquote>
       </div>
       <div class="q-nav">
         <button type="button" class="arrow" id="q-prev" aria-label="Previous review"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
@@ -531,11 +564,10 @@
   <section class="enquire" id="enquire">
     <div class="wrap">
       <div>
-        <p class="label">Enquire</p>
-        <h2 class="h2">Let's begin with a <em>conversation.</em></h2>
+        <h2 class="h2">Enquire</h2>
         <p style="margin-top:22px;max-width:440px">Tell us a little about your wedding. Your details open in WhatsApp ready to send, and we usually reply within a few hours.</p>
         <ul class="contact-list">
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><a href="tel:+910000000000">+91 00000 00000</a><small>Mon – Sat, 10 am – 7 pm</small></div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><a href="tel:+910000000000">+91 00000 00000</a><small>Monday to Saturday, 10 am to 7 pm</small></div></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5z"/></svg><div><a href="https://wa.me/910000000000" target="_blank" rel="noopener">Chat on WhatsApp</a><small>The quickest way to reach us</small></div></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6l8.5 7 8.5-7"/></svg><div><a href="mailto:hello@mehrab.example">hello@mehrab.example</a></div></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div>C-Scheme, Jaipur<small>Weddings across Rajasthan and beyond</small></div></li>
@@ -549,8 +581,8 @@
           <label>Phone<input name="phone" type="tel" required autocomplete="tel" pattern="[0-9+ ]{10,15}" title="10 to 15 digits" placeholder="98290 12345"></label>
           <label>Wedding date<input name="date" type="date"></label>
           <label>City or venue<input name="venue" placeholder="Jaipur, or not decided"></label>
-          <label>Guests<select name="guests"><option>Under 100</option><option selected>100 – 300</option><option>300 – 600</option><option>600+</option></select></label>
-          <label>Budget<select name="budget"><option>Under ₹15 lakh</option><option selected>₹15 – 40 lakh</option><option>₹40 lakh – 1 crore</option><option>₹1 crore+</option><option>Not sure yet</option></select></label>
+          <label>Guests<select name="guests"><option>Under 100</option><option selected>100 to 300</option><option>300 to 600</option><option>600+</option></select></label>
+          <label>Budget<select name="budget"><option>Under ₹15 lakh</option><option selected>₹15 to 40 lakh</option><option>₹40 lakh to 1 crore</option><option>₹1 crore+</option><option>Not sure yet</option></select></label>
           <fieldset class="full">
             <legend>Functions</legend>
             <div class="chips">
@@ -564,7 +596,7 @@
           </fieldset>
           <label class="full">Anything else?<textarea name="message" placeholder="Theme, colours, must-haves…"></textarea></label>
         </div>
-        <button class="btn" type="submit">Send on WhatsApp <span aria-hidden="true">→</span></button>
+        <button class="btn" type="submit">Send on WhatsApp</button>
         <p class="note">No spam. We only use your number to reply to you.</p>
       </form>
     </div>
@@ -574,8 +606,8 @@
 <footer>
   <div class="wrap">
     <div>
-      <a href="#top" class="logo"><svg viewBox="0 0 26 32" fill="none" aria-hidden="true"><path d="M2 31V13.5C2 7.5 6.5 3.5 13 1.5c6.5 2 11 6 11 12V31" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 31V15.5c0-3.2 2.2-5.8 5.5-7 3.3 1.2 5.5 3.8 5.5 7V31" stroke="currentColor" stroke-width="1.6"/></svg><span><b>MEHRAB</b><small>Weddings &amp; Events</small></span></a>
-      <p class="about">Wedding planning and design in Jaipur, and wherever in Rajasthan you'd like to say "qubool hai".</p>
+      <a href="#top" class="logo"><svg viewBox="0 0 26 32" fill="none" aria-hidden="true"><path d="M2 31V13.5C2 7.5 6.5 3.5 13 1.5c6.5 2 11 6 11 12V31" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 31V15.5c0-3.2 2.2-5.8 5.5-7 3.3 1.2 5.5 3.8 5.5 7V31" stroke="currentColor" stroke-width="1.6"/></svg><span><b>MEHRAB</b><small>Weddings &amp; events</small></span></a>
+      <p class="about">Wedding planning and design in Jaipur, and wherever in Rajasthan you’d like to be married.</p>
     </div>
     <div><h4>Explore</h4><ul><li><a href="#rituals">Rituals</a></li><li><a href="#services">Services</a></li><li><a href="#weddings">Real weddings</a></li></ul></div>
     <div><h4>Contact</h4><ul><li><a href="tel:+910000000000">+91 00000 00000</a></li><li><a href="https://wa.me/910000000000" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:hello@mehrab.example">hello@mehrab.example</a></li></ul></div>
@@ -606,12 +638,12 @@
 
   // Marigold toran strung across the hero arch
   (() => {
-    const svg = $('#toran'), n = 15, parts = ['<path d="M0 6Q200 54 400 6" fill="none" stroke="#7a5c30" stroke-width="1"/>'];
+    const svg = $('#toran'), n = 15, parts = ['<path class="string" d="M0 6Q200 54 400 6" stroke-width="1"/>'];
     for (let i = 0; i < n; i++) {
       const t = i / (n - 1), x = 400 * t, y = 6 + 96 * t * (1 - t);
-      if (i % 2) parts.push(`<path d="M${x} ${y}V${y + 22}" stroke="#7a5c30" stroke-width=".8"/><circle cx="${x}" cy="${y + 17}" r="4.2" fill="#e8891c"/><circle cx="${x}" cy="${y + 26}" r="3.4" fill="#f2b33d"/>`);
-      else parts.push(`<ellipse cx="${x + 9}" cy="${y + 4}" rx="5" ry="2.4" fill="#5f7a3a" transform="rotate(30 ${x + 9} ${y + 4})"/>`);
-      parts.push(`<circle cx="${x}" cy="${y}" r="6.2" fill="#e8891c"/><circle cx="${x}" cy="${y}" r="2.6" fill="#c4610f"/>`);
+      if (i % 2) parts.push(`<path class="string" d="M${x} ${y}V${y + 22}" stroke-width=".8"/><circle class="bloom" cx="${x}" cy="${y + 17}" r="4.2"/><circle class="bud" cx="${x}" cy="${y + 26}" r="3.4"/>`);
+      else parts.push(`<ellipse class="leaf" cx="${x + 9}" cy="${y + 4}" rx="5" ry="2.4" transform="rotate(30 ${x + 9} ${y + 4})"/>`);
+      parts.push(`<circle class="bloom" cx="${x}" cy="${y}" r="6.2"/><circle class="core" cx="${x}" cy="${y}" r="2.6"/>`);
     }
     svg.innerHTML = parts.join('');
   })();
@@ -689,7 +721,7 @@
     };
     const show = pos => {
       const seen = track.clientWidth / track.scrollWidth;
-      bar.style.width = `${(seen + pos * (1 - seen)) * 100}%`;
+      bar.style.transform = `scaleX(${seen + pos * (1 - seen)})`;
       prev.disabled = pos <= .005;
       next.disabled = pos >= .995;
     };
